@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Production</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            animation: fadeIn 2s ease;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #d4af37;
+            text-align: center;
+        }
+
+        section p, section ul {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        section ul {
+            list-style: disc;
+            padding-left: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Unique Production</div>
+        <ul>
+            <li><a href="#about">O nama</a></li>
+            <li><a href="#services">Usluge</a></li>
+            <li><a href="#references">Reference</a></li>
+            <li><a href="#testimonials">Testimoniali</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div>
+            <h1>Excellence in Music & Event Production</h1>
+            <p>Svaki događaj može biti poseban. Na nama je da ga učinimo UNIQUE.</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>O nama</h2>
+        <p>Dobrodošli u Unique Production, produkcijsku agenciju specijalizovanu za muzičke performanse, umjetničke spektakle i organizaciju događaja. Mi spajamo kreativnost i visoki profesionalizam kako bismo kreirali nezaboravne evente – od luksuznih gala večeri i privatnih proslava, do velikih scenskih produkcija i korporativnih događaja.</p>
+        <p>Produkcijsku kuću Unique Production vodi Verica Čuljković, violinistkinja i art producent sa preko 15 godina iskustva u muzičkoj i event industriji.</p>
+        <p>“Moja misija je stvaranje UNIQUE koncepata i kreativnih rješenja koja svaki događaj pretvaraju u autentično iskustvo. Umjetnost, muzika i emocija su srž svakog momenta koji kreiram.” – Verica Čuljković</p>
+        <p>Sa bogatim iskustvom u event, muzičkoj i scenskoj umjetnosti, pružamo autentična i inovativna rješenja, prilagođena viziji i potrebama svakog klijenta.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Usluge</h2>
+        <h3>Muzički performansi</h3>
+        <ul>
+            <li>Gudački kvartet Unique – sofisticirani zvuk klasične muzike</li>
+            <li>Duo violina & violončelo – emotivan i elegantan spoj gudača</li>
+            <li>All Stars String Ensemble Montenegro – orkestar za prestižne događaje</li>
+            <li>Duo gitara & violina – kombinacija tango i latino ritmova</li>
+            <li>Električna violina & DJ – moderna sinergija klasične i elektronske muzike</li>
+            <li>Personalizovani repertoar dostupan na zahtjev</li>
+        </ul>
+        <h3>Scenski art performansi</h3>
+        <ul>
+            <li>Akrobatika</li>
+            <li>Baletski ansambl</li>
+            <li>Ples sa vatrom</li>
+            <li>Voditelj programa</li>
+        </ul>
+        <h3>Specijalni efekti & tehnička produkcija</h3>
+        <ul>
+            <li>Suvi led</li>
+            <li>Pirotehnika</li>
+            <li>Kompletna tehnička produkcija</li>
+        </ul>
+        <h3>Dodatne usluge</h3>
+        <ul>
+            <li>Koktel majstor – profesionalni barmen sa kompletnom opremom</li>
+            <li>Dekoracija prostora – personalizovana scenografija i stilizacija eventa</li>
+        </ul>
+    </section>
+
+    <!-- References Section -->
+    <section id="references">
+        <h2>Reference & Klijenti</h2>
+        <p>(Ovdje možete dodati logoe kompanija i materijale sa događaja)</p>
+        <p>📸 Fotografije sa prethodnih događaja po vrsti događaja: Korporativni događaji, festivali, vjenčanja, ostalo</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>Testimoniali</h2>
+        <p>Ovo možete u narednim danima pripremiti od klijenata.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Unique Production. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
