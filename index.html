@@ -114,13 +114,13 @@
         .hero {
             position: relative;
             height: 100vh;
+            background: url('naslovna.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #fff;
             padding: 20px;
-            overflow: hidden; /* Sprečava prelivanje slike */
         }
 
         .hero::before {
@@ -132,16 +132,6 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
-        }
-
-        .hero img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Cela slika je vidljiva */
-            z-index: 0;
         }
 
         .hero-content {
@@ -513,6 +503,8 @@
 
             .hero {
                 height: 80vh;
+                background-size: auto 100%; /* Širina slike ostaje prirodna, visina popunjava prostor */
+                background-position: center; /* Centrirano pozicioniranje */
             }
 
             .hero h1 {
@@ -659,7 +651,6 @@
     </header>
 
     <section class="hero">
-        <img src="naslovna.jpg" alt="Naslovna slika">
         <div class="hero-content">
             <h1>Dobrodošli u UNICQUE</h1>
             <p class="subtitle">Svaki događaj može biti poseban. Na nama je da ga učinimo <span class="highlight">UNIQUE</span>.</p>
