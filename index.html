@@ -360,7 +360,7 @@
         }
 
         .footer-section {
-            flex: 1; /* Popravljena sintaksa sa "flex-item" na "flex" */
+            flex: 1;
             min-width: 200px;
         }
 
@@ -503,6 +503,8 @@
 
             .hero {
                 height: 80vh;
+                background-size: auto 100%; /* Širina slike ostaje prirodna, visina popunjava prostor */
+                background-position: center; /* Centrirano pozicioniranje */
             }
 
             .hero h1 {
@@ -543,8 +545,8 @@
 
             .gallery-item img {
                 width: 100%;
-                height: auto; /* Visina se prilagođava širini za prirodne proporcije */
-                object-fit: contain; /* Cela slika je vidljiva */
+                height: auto;
+                object-fit: contain;
             }
 
             .services-card h3 {
@@ -609,8 +611,8 @@
 
             .gallery-item img {
                 width: 100%;
-                height: auto; /* Visina se prilagođava širini za prirodne proporcije */
-                object-fit: contain; /* Cela slika je vidljiva */
+                height: auto;
+                object-fit: contain;
             }
 
             .services-card .services-list li {
@@ -745,7 +747,7 @@
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
 
-            hamburger.addEventListener('click', () => { // Ispravljeno "addEvent дезен" na "addEventListener"
+            hamburger.addEventListener('click', () => {
                 hamburger.classList.toggle('active');
                 navLinks.classList.toggle('active');
             });
