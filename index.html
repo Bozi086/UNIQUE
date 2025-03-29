@@ -7,12 +7,15 @@
     <title>Početna - UNICQUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-       * {
+
+/* Osnovni reset stila za sve elemente */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Stil za telo stranice (body) */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
@@ -23,6 +26,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Stil za navigacioni bar */
 .navbar {
     background-color: #000;
     padding: 20px;
@@ -36,24 +40,41 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Stil za logo u navigacionom baru */
 .logo {
-    color: #fff;
-    font-size: 24px;
     margin-left: 20px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
+/* Stil za sliku loga unutar .logo */
+.logo img {
+    height: 50px; /* Visina loga na desktopu - prilagodi po potrebi */
+    width: auto; /* Širina se automatski prilagođava za proporcije */
+    object-fit: contain; /* Očuvava proporcije slike */
+    transition: transform 0.3s ease; /* Glatki efekat za hover */
+    border-radius: 8px; /* Zaobljene ivice loga */
+    border: 4px solid #a78bfa; /* Ljubičasti border od 2px */
+}
+
+.logo img:hover {
+    transform: scale(1.5); /* Blago uvećanje slike na hover */
+}
+
+/* Stil za listu linkova u navigaciji */
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
 }
 
+/* Stil za pojedinačne stavke u listi linkova */
 .nav-links li {
     margin: 0 20px;
     position: relative;
 }
 
+/* Stil za linkove unutar navigacije */
 .nav-links a {
     color: #fff;
     text-decoration: none;
@@ -65,10 +86,12 @@ body {
     color: #a78bfa;
 }
 
+/* Stil za padajući meni */
 .dropdown {
     position: relative;
 }
 
+/* Stil za sadržaj padajućeg menija */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -80,6 +103,7 @@ body {
     left: 0;
 }
 
+/* Stil za linkove unutar padajućeg menija */
 .dropdown-content a {
     color: #fff;
     padding: 12px 16px;
@@ -97,6 +121,7 @@ body {
     display: block;
 }
 
+/* Stil za hamburger meni (vidljiv na mobilnim uređajima) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -104,6 +129,7 @@ body {
     margin-right: 20px;
 }
 
+/* Stil za crtice u hamburger meniju */
 .hamburger span {
     width: 30px;
     height: 3px;
@@ -112,6 +138,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Stil za hero sekciju (naslovna sekcija sa videom) */
 .hero {
     position: relative;
     height: 100vh;
@@ -124,6 +151,7 @@ body {
     overflow: hidden;
 }
 
+/* Stil za tamni prekrivni sloj preko videa u hero sekciji */
 .hero::before {
     content: '';
     position: absolute;
@@ -135,6 +163,7 @@ body {
     z-index: 1;
 }
 
+/* Stil za video u hero sekciji */
 .hero video {
     position: absolute;
     top: 0;
@@ -145,12 +174,14 @@ body {
     z-index: 0;
 }
 
+/* Stil za sadržaj unutar hero sekcije */
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
 }
 
+/* Stil za naslov u hero sekciji */
 .hero h1 {
     font-size: 48px;
     font-weight: 700;
@@ -159,6 +190,7 @@ body {
     animation: fadeInDown 1s ease;
 }
 
+/* Stil za podnaslov u hero sekciji */
 .hero .subtitle {
     font-family: 'Georgia', serif;
     font-style: italic;
@@ -167,11 +199,13 @@ body {
     animation: fadeInUp 1s ease 0.5s backwards;
 }
 
+/* Stil za istaknuti tekst u hero sekciji */
 .hero .highlight {
     color: #a78bfa;
     font-weight: 600;
 }
 
+/* Stil za dugme u hero sekciji */
 .hero .cta-button {
     background: linear-gradient(45deg, #a78bfa, #7c3aed);
     color: #fff;
@@ -189,16 +223,19 @@ body {
     transform: translateY(-3px);
 }
 
+/* Animacija za fadeInDown efekat */
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Animacija za fadeInUp efekat */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Stil za glavni sadržaj stranice (main) */
 main {
     padding: 60px 20px;
     max-width: 1200px;
@@ -208,12 +245,14 @@ main {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
 }
 
+/* Stil za kontejner unutar main sekcije */
 .home-container {
     display: flex;
     flex-direction: column;
     gap: 60px;
 }
 
+/* Stil za pojedinačne sekcije unutar main-a */
 .section {
     padding: 40px;
     background-color: #fff;
@@ -221,6 +260,7 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Stil za sekciju "O nama" */
 .about-section h2 {
     font-size: 36px;
     color: #222;
@@ -255,6 +295,7 @@ main {
     font-weight: 600;
 }
 
+/* Stil za sekciju "Naša misija" */
 .intro-section {
     animation: circleShadow 3s infinite ease-in-out;
 }
@@ -296,6 +337,7 @@ main {
     text-align: center;
 }
 
+/* Animacija za circleShadow efekat */
 @keyframes circleShadow {
     0% { box-shadow: 10px 10px 20px rgba(167, 139, 250, 0.5); }
     25% { box-shadow: -10px 10px 20px rgba(167, 139, 250, 0.5); }
@@ -304,12 +346,14 @@ main {
     100% { box-shadow: 10px 10px 20px rgba(167, 139, 250, 0.5); }
 }
 
+/* Stil za pregled galerije */
 .gallery-preview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
+/* Stil za pojedinačne stavke u galeriji */
 .gallery-item {
     position: relative;
     overflow: hidden;
@@ -352,6 +396,7 @@ main {
     color: #a78bfa;
 }
 
+/* Stil za sekciju usluga */
 .services-grid {
     padding: 40px;
     background-color: #fff;
@@ -380,12 +425,14 @@ main {
     background: linear-gradient(to right, #a78bfa, transparent);
 }
 
+/* Stil za kontejner unutar sekcije usluga */
 .services-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
+/* Stil za pojedinačne stavke u sekciji usluga */
 .service-item {
     display: flex;
     flex-direction: column;
@@ -426,11 +473,13 @@ main {
     color: #a78bfa;
 }
 
+/* Stil za CTA sekciju (poziv na akciju) */
 .cta-section {
     text-align: center;
     padding: 20px 0;
 }
 
+/* Stil za CTA dugme */
 .cta-button {
     background: linear-gradient(45deg, #a78bfa, #7c3aed);
     color: #fff;
@@ -450,12 +499,14 @@ main {
     transform: translateY(-3px);
 }
 
+/* Animacija za pulseShadow efekat */
 @keyframes pulseShadow {
     0% { box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3); }
     50% { box-shadow: 0 15px 40px rgba(167, 139, 250, 0.7); }
     100% { box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3); }
 }
 
+/* Stil za podnožje (footer) */
 footer {
     background-color: #000;
     color: #fff;
@@ -464,6 +515,7 @@ footer {
     position: relative;
 }
 
+/* Stil za kontejner unutar podnožja */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -473,6 +525,7 @@ footer {
     gap: 20px;
 }
 
+/* Stil za sekcije unutar podnožja */
 .footer-section {
     flex: 1;
     min-width: 200px;
@@ -505,6 +558,7 @@ footer {
     position: relative;
 }
 
+/* Stil za linkove u podnožju */
 .footer-section a {
     color: #fff;
     text-decoration: none;
@@ -516,6 +570,7 @@ footer {
     transform: translateX(5px);
 }
 
+/* Stil za padajući meni u podnožju */
 .footer-dropdown .dropdown-content {
     display: none;
     position: absolute;
@@ -531,6 +586,7 @@ footer {
     display: block;
 }
 
+/* Stil za društvene mreže u podnožju */
 .social-links {
     margin-top: 15px;
 }
@@ -547,6 +603,7 @@ footer {
     transform: scale(1.2);
 }
 
+/* Stil za kreditnu liniju u podnožju */
 .footer-credit {
     text-align: center;
     margin-top: 30px;
@@ -567,6 +624,7 @@ footer {
     transform: none;
 }
 
+/* Responsivni dizajn za ekrane do 768px */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -705,11 +763,17 @@ footer {
         margin: 0 15px;
         font-size: 24px;
     }
+
+    /* Responsivni stil za logo na 768px */
+    .logo img {
+        height: 35px; /* Smanjena veličina loga za tablet uređaje */
+    }
 }
 
+/* Responsivni dizajn za ekrane do 480px */
 @media (max-width: 480px) {
-    .logo {
-        font-size: 20px;
+    .logo img {
+        height: 30px; /* Smanjena veličina loga za mobilne uređaje */
     }
 
     .hero h1 {
@@ -765,7 +829,7 @@ footer {
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>UNICQUE</h1>
+                <img src="logo1.jpg" alt="logo Uniqueproduction ">
             </div>
             <div class="hamburger">
                 <span></span>
