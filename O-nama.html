@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O nama</title>
+    <title>O nama - UNICQUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
@@ -13,12 +13,13 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #000;
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
         .navbar {
@@ -31,12 +32,14 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .logo {
             color: #fff;
             font-size: 24px;
             margin-left: 20px;
+            font-weight: bold;
         }
 
         .nav-links {
@@ -47,7 +50,7 @@
 
         .nav-links li {
             margin: 0 20px;
-            position: relative; /* For dropdown positioning */
+            position: relative;
         }
 
         .nav-links a {
@@ -58,10 +61,9 @@
         }
 
         .nav-links a:hover {
-            color: #ffd700;
+            color: #a78bfa;
         }
 
-        /* Dropdown styles */
         .dropdown {
             position: relative;
         }
@@ -86,7 +88,7 @@
         }
 
         .dropdown-content a:hover {
-            color: #ffd700;
+            color: #a78bfa;
             background-color: #1a1a1a;
         }
 
@@ -107,6 +109,197 @@
             background-color: #fff;
             margin: 3px 0;
             transition: all 0.3s ease;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 120px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f7f7f7 0%, #e8e8e8 100%);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-container {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .section {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-1, .section-2, .section-3, .section-4 {
+            min-height: 300px;
+        }
+
+        .section h2 {
+            font-size: 40px;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #a78bfa, transparent);
+        }
+
+        .section h3 {
+            font-size: 24px;
+            color: #a78bfa;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            text-align: justify;
+        }
+
+        .section .highlight {
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
+        .section-2 {
+            animation: pulseGlow 2s infinite;
+            position: relative;
+        }
+
+        .section-2 .quote {
+            font-style: italic;
+            font-size: 20px;
+            color: #555;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .section-2 .quote-author {
+            font-size: 18px;
+            color: #a78bfa;
+            font-weight: 600;
+            text-align: right;
+            display: block;
+            margin-top: 10px;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 5px 15px rgba(167, 139, 250, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 25px rgba(167, 139, 250, 0.5);
+            }
+            100% {
+                box-shadow: 0 5px 15px rgba(167, 139, 250, 0.3);
+            }
+        }
+
+        .section-3 {
+            height: 400px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: none;
+        }
+
+        .section-3 p {
+            color: #666;
+            font-size: 18px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .section-4 {
+            border: 3px solid #a78bfa; /* Ljubicasti border od 3px */
+            position: relative;
+        }
+
+        .section-4 h3 {
+            font-size: 24px;
+            color: #a78bfa;
+            margin: 20px 0 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .section-4 .services-list {
+            list-style: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .section-4 .services-list li {
+            font-size: 18px;
+            color: #666;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-4 .services-list li i {
+            color: #a78bfa;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .cta-section {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #a78bfa, #7c3aed);
+            color: #fff;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: pulseShadow 1.5s infinite;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        @keyframes pulseShadow {
+            0% {
+                box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3);
+            }
+            50% {
+                box-shadow: 0 15px 40px rgba(167, 139, 250, 0.7);
+            }
+            100% {
+                box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3);
+            }
         }
 
         footer {
@@ -146,7 +339,7 @@
             left: 0;
             width: 30px;
             height: 2px;
-            background-color: #ffd700;
+            background-color: #a78bfa;
         }
 
         .footer-section ul {
@@ -155,7 +348,7 @@
 
         .footer-section ul li {
             margin: 12px 0;
-            position: relative; /* For footer dropdown */
+            position: relative;
         }
 
         .footer-section a {
@@ -165,11 +358,10 @@
         }
 
         .footer-section a:hover {
-            color: #ffd700;
+            color: #a78bfa;
             transform: translateX(5px);
         }
 
-        /* Footer dropdown styles */
         .footer-dropdown .dropdown-content {
             display: none;
             position: absolute;
@@ -197,7 +389,7 @@
         }
 
         .social-links a:hover {
-            color: #ffd700;
+            color: #a78bfa;
             transform: scale(1.2);
         }
 
@@ -217,10 +409,11 @@
         }
 
         .footer-credit a:hover {
-            color: #ffd700;
+            color: #a78bfa;
             transform: none;
         }
 
+        /* Mobilna optimizacija */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -231,11 +424,11 @@
                 flex-direction: column;
                 position: absolute;
                 top: 60px;
-                right: 0;
+                left: 0;
                 background-color: #000;
-                width: 200px;
+                width: 100%;
                 padding: 20px;
-                text-align: right;
+                text-align: center;
             }
 
             .nav-links.active {
@@ -243,7 +436,11 @@
             }
 
             .nav-links li {
-                margin: 10px 0;
+                margin: 15px 0;
+            }
+
+            .nav-links a {
+                font-size: 20px;
             }
 
             .dropdown-content {
@@ -265,9 +462,56 @@
                 transform: rotate(-45deg) translate(7px, -7px);
             }
 
+            main {
+                padding: 80px 15px 40px;
+            }
+
+            .about-container {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .section h2 {
+                font-size: 32px;
+            }
+
+            .section h3 {
+                font-size: 20px;
+            }
+
+            .section p,
+            .section-4 .services-list li {
+                font-size: 16px;
+            }
+
+            .section-2 .quote {
+                font-size: 18px;
+                padding: 15px 0;
+            }
+
+            .section-2 .quote-author {
+                font-size: 16px;
+            }
+
+            .section-3 {
+                height: 300px;
+                order: 2; /* Nakon citata */
+            }
+
+            .section-4 {
+                order: 3;
+            }
+
+            .cta-section {
+                order: 4;
+            }
+
             .footer-container {
                 flex-direction: column;
                 text-align: center;
+                padding: 0 15px;
             }
 
             .footer-section h3::after {
@@ -282,6 +526,7 @@
 
             .social-links a {
                 margin: 0 15px;
+                font-size: 24px;
             }
 
             .footer-dropdown .dropdown-content {
@@ -292,20 +537,47 @@
                 left: 0;
             }
         }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .about-container {
+                padding: 15px;
+            }
+
+            .section-2 .quote {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+
+            .section-3 {
+                height: 250px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>Logo</h1>
+                <h1>UNICQUE</h1>
             </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-                   <ul class="nav-links">
+            <ul class="nav-links">
                 <li><a href="index.html">Početna</a></li>
                 <li><a href="O-nama.html">O nama</a></li>
                 <li class="dropdown">
@@ -323,7 +595,35 @@
         </nav>
     </header>
 
-    <!-- Main content would go here -->
+    <main>
+        <div class="about-container">
+            <div class="section section-1">
+                <h2>O nama</h2>
+                <h3><span class="highlight">Unique Production</span></h3>
+                <p><em>Svaki događaj može biti poseban. Na nama je da ga učinimo <span class="highlight">UNIQUE</span>.</em></p>
+                <p>Dobrodošli u <span class="highlight">Unique Production</span>, produkcijsku agenciju koja spaja kreativnost i profesionalizam kako bi stvorila nezaboravne trenutke. Specijalizovani smo za muzičke performanse, umjetničke spektakle i organizaciju događaja – od luksuznih gala večeri i privatnih proslava do velikih scenskih produkcija i korporativnih evenata.</p>
+            </div>
+            <div class="section section-2">
+                <p class="quote">“Moja misija je stvaranje <span class="highlight">UNIQUE</span> koncepata i kreativnih rješenja koja svaki događaj pretvaraju u autentično iskustvo. Umjetnost, muzika i emocija su srž svakog momenta koji kreiram.”<br><span class="quote-author">– Verica Čuljković</span></p>
+            </div>
+            <div class="section section-3">
+                <p>[Prostor za vašu sliku]</p>
+            </div>
+            <div class="section section-4">
+                <p>Vodi nas <b>Verica Čuljković</b>, violinistkinja i art producent sa preko 15 godina iskustva u muzičkoj i event industriji. Sarađujući s vodećim svjetskim produkcijama, od luksuznih vjenčanja do ekskluzivnih festivala, naš tim donosi prepoznatljiv potpis vrhunske umjetnosti, inovativne scenografije i izuzetnih nastupa.</p>
+                <p>Iza tima koji danas čini <span class="highlight">Unique Production</span> stoje godine uspješnih saradnji sa najvećim resortima, kompanijama i festivalima u Crnoj Gori i inostranstvu, osiguravajući da svaki event bude obilježen vrhunskim organizacionim standardom i umjetničkim doživljajem.</p>
+                <h3>Naše usluge</h3>
+                <ul class="services-list">
+                    <li><i class="fas fa-music"></i>Muzički performansi</li>
+                    <li><i class="fas fa-paint-brush"></i>Art performansi</li>
+                    <li><i class="fas fa-cogs"></i>Tehnička produkcija</li>
+                </ul>
+            </div>
+            <div class="cta-section">
+                <a href="Kontakti.html" class="cta-button">Kontaktirajte nas</a>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <div class="footer-container">
@@ -348,9 +648,9 @@
             <div class="footer-section">
                 <h3>Kontakt</h3>
                 <ul>
-                    <li><a href="tel:+38112345678">+381 12 345 678</a></li>
-                    <li><a href="mailto:info@muzickikvartet.com">info@muzickikvartet.com</a></li>
-                    <li>Beograd, Srbija</li>
+                    <li><a href="tel:+38268256063">+382 68 256 063</a></li>
+                    <li><a href="mailto:info@unique.me">info@unique.me</a></li>
+                    <li>Podgorica, Crna Gora</li>
                 </ul>
             </div>
             <div class="footer-section">
