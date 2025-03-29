@@ -434,12 +434,14 @@
             }
 
             main {
-                padding: 80px 0 40px; /* Smanjen padding za više prostora */
+                padding: 80px 0 40px; /* Uklonjen bočni padding */
+                border-radius: 0; /* Uklonjen radius za punu širinu */
+                box-shadow: none; /* Uklonjena sjena za čist izgled */
             }
 
             .gallery-container {
-                padding: 20px 0; /* Smanjen padding za širi prikaz */
-                overflow-x: hidden;
+                padding: 20px 0; /* Bez bočnog paddinga */
+                width: 100%;
             }
 
             .gallery-header h2 {
@@ -449,25 +451,29 @@
             .gallery-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+                width: 100%;
             }
 
             .gallery-item {
-                width: 125%; /* Povećana širina za 25% */
-                margin-left: -12.5%; /* Centriranje */
-                overflow: visible; /* Osigurava da širina bude vidljiva */
+                width: 100%; /* Puna širina ekrana */
+                margin: 0; /* Uklonjene margine */
+                border-radius: 0; /* Uklonjen radius za punu širinu */
             }
 
             .gallery-item img {
                 width: 100%;
-                height: 400px;
+                height: 60vh; /* Visina proporcionalna ekranu */
+                object-fit: cover;
+                border-radius: 0; /* Uklonjen radius */
             }
 
             .gallery-item .caption {
+                padding: 15px;
                 width: 100%;
             }
 
             .gallery-item .caption span {
-                font-size: 16px;
+                font-size: 18px; /* Veći tekst za bolju čitljivost */
             }
 
             .footer-container {
@@ -514,12 +520,11 @@
             }
 
             .gallery-item img {
-                height: 350px;
+                height: 50vh; /* Malo manja visina za vrlo male ekrane */
             }
 
-            .gallery-item {
-                width: 125%;
-                margin-left: -12.5%;
+            .gallery-item .caption span {
+                font-size: 16px;
             }
         }
     </style>
