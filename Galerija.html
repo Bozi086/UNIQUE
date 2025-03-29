@@ -113,16 +113,14 @@
 
         /* Main content styles */
         main {
-            padding: 120px 20px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #f7f7f7 0%, #e8e8e8 100%);
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            padding: 100px 0;
+            background: #f7f7f7;
         }
 
         .gallery-container {
-            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .gallery-header {
@@ -151,50 +149,40 @@
             background: linear-gradient(to right, #a78bfa, transparent);
         }
 
+        .gallery-header p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Vraćeno na 4 stupca */
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 250px; /* Visina na desktopu */
+            height: 400px;
             object-fit: cover;
             display: block;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .gallery-item .caption {
-            padding: 10px;
-            text-align: center;
-            background-color: #fff;
-            border-top: 3px solid #a78bfa;
-        }
-
-        .gallery-item .caption span {
-            font-size: 14px;
-            color: #666;
-            font-weight: 600;
+            border-radius: 10px;
         }
 
         .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(167, 139, 250, 0.4);
-        }
-
-        .gallery-item:hover img {
-            filter: brightness(1.1);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(167, 139, 250, 0.4);
         }
 
         /* Modal styles */
@@ -270,13 +258,12 @@
         footer {
             background-color: #000;
             color: #fff;
-            padding: 40px 20px 20px;
+            padding: 40px 20px;
             margin-top: auto;
-            position: relative;
         }
 
         .footer-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -313,7 +300,6 @@
 
         .footer-section ul li {
             margin: 12px 0;
-            position: relative;
         }
 
         .footer-section a {
@@ -375,16 +361,9 @@
 
         .footer-credit a:hover {
             color: #a78bfa;
-            transform: none;
         }
 
         /* Mobilna optimizacija */
-        @media (max-width: 1024px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -434,48 +413,30 @@
             }
 
             main {
-                padding: 80px 0 40px;
-                border-radius: 0;
-                box-shadow: none;
+                padding: 80px 0;
             }
 
             .gallery-container {
-                padding: 20px 0;
-                width: 100%;
-                overflow-x: hidden;
+                padding: 0;
             }
 
             .gallery-header h2 {
                 font-size: 32px;
             }
 
+            .gallery-header p {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
-                width: 100%;
-            }
-
-            .gallery-item {
-                width: 150%; /* Znatno veća širina - 50% više od ekrana */
-                margin-left: -25%; /* Centriranje */
-                border-radius: 0;
-                overflow: visible;
             }
 
             .gallery-item img {
-                width: 100%;
-                height: 70vh; /* Povećana visina za proporcionalnost */
-                object-fit: cover;
+                height: 80vh;
                 border-radius: 0;
-            }
-
-            .gallery-item .caption {
-                padding: 15px;
-                width: 100%;
-            }
-
-            .gallery-item .caption span {
-                font-size: 18px;
             }
 
             .footer-container {
@@ -496,7 +457,6 @@
 
             .social-links a {
                 margin: 0 15px;
-                font-size: 24px;
             }
 
             .footer-dropdown .dropdown-content {
@@ -517,21 +477,8 @@
                 font-size: 28px;
             }
 
-            .gallery-container {
-                padding: 15px 0;
-            }
-
             .gallery-item img {
-                height: 60vh; /* Malo manja visina za vrlo male ekrane */
-            }
-
-            .gallery-item {
-                width: 150%;
-                margin-left: -25%;
-            }
-
-            .gallery-item .caption span {
-                font-size: 16px;
+                height: 70vh;
             }
         }
     </style>
@@ -569,55 +516,26 @@
         <div class="gallery-container">
             <div class="gallery-header">
                 <h2>Galerija</h2>
+                <p>Pogledajte našu kolekciju inspirativnih trenutaka i vizuelnih doživljaja koji govore sami za sebe.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" data-full="https://via.placeholder.com/800x600">
-                    <img src="https://via.placeholder.com/400x250" alt="Luksuzna gala večera">
-                    <div class="caption">
-                        <span>Luksuzna gala večera</span>
-                    </div>
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
+                    <img src="https://via.placeholder.com/600x400" alt="Slika 1">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/800x600">
-                    <img src="https://via.placeholder.com/400x250" alt="Muzički performans">
-                    <div class="caption">
-                        <span>Muzički performans</span>
-                    </div>
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
+                    <img src="https://via.placeholder.com/600x400" alt="Slika 2">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/800x600">
-                    <img src="https://via.placeholder.com/400x250" alt="Umjetnički spektakl">
-                    <div class="caption">
-                        <span>Umjetnički spektakl</span>
-                    </div>
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
+                    <img src="https://via.placeholder.com/600x400" alt="Slika 3">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/800x600">
-                    <img src="https://via.placeholder.com/400x250" alt="Korporativni event">
-                    <div class="caption">
-                        <span>Korporativni event</span>
-                    </div>
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
+                    <img src="https://via.placeholder.com/600x400" alt="Slika 4">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/800x600">
-                    <img src="https://via.placeholder.com/400x250" alt="Privatna proslava">
-                    <div class="caption">
-                        <span>Privatna proslava</span>
-                    </div>
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
+                    <img src="https://via.placeholder.com/600x400" alt="Slika 5">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/800x600">
-                    <img src="https://via.placeholder.com/400x250" alt="Festival u Crnoj Gori">
-                    <div class="caption">
-                        <span>Festival u Crnoj Gori</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/800x600">
-                    <img src="https://via.placeholder.com/400x250" alt="Događaj 7">
-                    <div class="caption">
-                        <span>Događaj 7</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/800x600">
-                    <img src="https://via.placeholder.com/400x250" alt="Događaj 8">
-                    <div class="caption">
-                        <span>Događaj 8</span>
-                    </div>
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
+                    <img src="https://via.placeholder.com/600x400" alt="Slika 6">
                 </div>
             </div>
         </div>
@@ -687,12 +605,10 @@
                 navLinks.classList.toggle('active');
             });
 
-            // Dodavanje klik eventa na svaku sliku
             document.querySelectorAll('.gallery-item').forEach((item, index) => {
                 item.addEventListener('click', () => openModal(index));
             });
 
-            // Osiguravanje da klik na "X" uvijek radi
             document.querySelector('.modal-close').addEventListener('click', closeModal);
         });
 
@@ -719,14 +635,12 @@
             document.getElementById('modal-image').src = images[currentIndex];
         }
 
-        // Zatvaranje modala klikom van slike
         document.getElementById('modal').addEventListener('click', function(e) {
             if (e.target === this || e.target.classList.contains('modal-content')) {
                 closeModal();
             }
         });
 
-        // Navigacija strelicama na tastaturi
         document.addEventListener('keydown', (e) => {
             if (document.getElementById('modal').style.display === 'flex') {
                 if (e.key === 'ArrowLeft') prevImage();
