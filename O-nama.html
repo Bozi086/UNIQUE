@@ -248,7 +248,7 @@
             justify-content: center;
             box-shadow: none;
             overflow: hidden; /* Sprečava prelivanje slike */
-            height: auto; /* Visina se prilagođava sadržaju (slika ili tekst) */
+            height: auto; /* Visina se prilagođava sadržaju na desktopu */
         }
 
         .section-3 img {
@@ -539,13 +539,13 @@
             }
 
             .section-3 {
-                height: 300px; /* Fiksna visina za mobilne uređaje */
+                height: 400px; /* Povećana visina za mobilne uređaje (<768px) */
                 order: 2;
             }
 
             .section-3 img {
                 max-width: 100%; /* Smanjena širina za mobilne uređaje */
-                max-height: 300px; /* Prilagođena visina za mobilne uređaje */
+                max-height: 400px; /* Povećana visina slike za mobilne uređaje */
             }
 
             .section-4 {
@@ -630,11 +630,11 @@
             }
 
             .section-3 {
-                height: 250px; /* Fiksna visina za manje ekrane */
+                height: 350px; /* Povećana visina za manje ekrane (<480px) */
             }
 
             .section-3 img {
-                max-height: 250px; /* Prilagođena visina za manje ekrane */
+                max-height: 350px; /* Povećana visina slike za manje ekrane */
             }
         }
     </style>
