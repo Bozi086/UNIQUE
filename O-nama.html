@@ -121,6 +121,47 @@
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
         }
 
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro-section h1 {
+            font-size: 40px;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .intro-section h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #a78bfa, transparent);
+        }
+
+        .intro-section .subtitle {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: #555;
+            margin: 20px 0;
+            max-width: 800px;
+            display: inline-block;
+        }
+
+        .intro-section .highlight {
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
         .about-container {
             padding: 40px;
             display: grid;
@@ -137,28 +178,6 @@
 
         .section-1, .section-2, .section-3, .section-4 {
             min-height: 300px;
-        }
-
-        .section h2 {
-            font-size: 40px;
-            color: #222;
-            margin-bottom: 15px;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 10px;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(to right, #a78bfa, transparent);
         }
 
         .section h3 {
@@ -184,22 +203,29 @@
         .section-2 {
             animation: pulseGlow 2s infinite;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
         }
 
         .section-2 .quote {
+            font-family: 'Georgia', serif;
             font-style: italic;
-            font-size: 20px;
+            font-size: 24px;
             color: #555;
             text-align: center;
             padding: 20px 0;
+            max-width: 90%;
         }
 
         .section-2 .quote-author {
-            font-size: 18px;
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
             color: #a78bfa;
             font-weight: 600;
-            text-align: right;
-            display: block;
+            text-align: center;
             margin-top: 10px;
         }
 
@@ -232,34 +258,43 @@
         }
 
         .section-4 {
-            border: 3px solid #a78bfa; /* Ljubicasti border od 3px */
+            border: 3px solid #a78bfa;
             position: relative;
         }
 
-        .section-4 h3 {
+        .services-card {
+            grid-column: 1 / -1;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin: 0 auto 20px;
+            max-width: 500px;
+            text-align: center;
+            border: 2px solid #a78bfa;
+        }
+
+        .services-card h3 {
             font-size: 24px;
             color: #a78bfa;
-            margin: 20px 0 10px;
             font-weight: 600;
-            text-align: center;
+            margin-bottom: 15px;
         }
 
-        .section-4 .services-list {
+        .services-card .services-list {
             list-style: none;
-            margin-top: 20px;
-            text-align: center;
         }
 
-        .section-4 .services-list li {
+        .services-card .services-list li {
             font-size: 18px;
             color: #666;
-            margin: 15px 0;
+            margin: 10px 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .section-4 .services-list li i {
+        .services-card .services-list li i {
             color: #a78bfa;
             margin-right: 10px;
             font-size: 20px;
@@ -466,6 +501,14 @@
                 padding: 80px 15px 40px;
             }
 
+            .intro-section h1 {
+                font-size: 32px;
+            }
+
+            .intro-section .subtitle {
+                font-size: 20px;
+            }
+
             .about-container {
                 padding: 20px;
                 display: flex;
@@ -473,39 +516,40 @@
                 gap: 20px;
             }
 
-            .section h2 {
-                font-size: 32px;
-            }
-
             .section h3 {
                 font-size: 20px;
             }
 
             .section p,
-            .section-4 .services-list li {
+            .services-card .services-list li {
                 font-size: 16px;
             }
 
             .section-2 .quote {
-                font-size: 18px;
+                font-size: 20px;
                 padding: 15px 0;
             }
 
             .section-2 .quote-author {
-                font-size: 16px;
+                font-size: 18px;
             }
 
             .section-3 {
                 height: 300px;
-                order: 2; /* Nakon citata */
+                order: 2;
             }
 
             .section-4 {
                 order: 3;
             }
 
-            .cta-section {
+            .services-card {
                 order: 4;
+                margin-bottom: 15px;
+            }
+
+            .cta-section {
+                order: 5;
             }
 
             .footer-container {
@@ -543,8 +587,12 @@
                 font-size: 20px;
             }
 
-            .section h2 {
+            .intro-section h1 {
                 font-size: 28px;
+            }
+
+            .intro-section .subtitle {
+                font-size: 18px;
             }
 
             .about-container {
@@ -552,7 +600,19 @@
             }
 
             .section-2 .quote {
+                font-size: 18px;
+            }
+
+            .section-2 .quote-author {
                 font-size: 16px;
+            }
+
+            .services-card h3 {
+                font-size: 20px;
+            }
+
+            .services-card .services-list li {
+                font-size: 14px;
             }
 
             .cta-button {
@@ -596,27 +656,36 @@
     </header>
 
     <main>
+        <div class="intro-section">
+            <h1>O nama</h1>
+            <p class="subtitle">Svaki događaj može biti poseban. Na nama je da ga učinimo <span class="highlight">UNIQUE</span>.</p>
+        </div>
         <div class="about-container">
             <div class="section section-1">
-                <h2>O nama</h2>
                 <h3><span class="highlight">Unique Production</span></h3>
-                <p><em>Svaki događaj može biti poseban. Na nama je da ga učinimo <span class="highlight">UNIQUE</span>.</em></p>
-                <p>Dobrodošli u <span class="highlight">Unique Production</span>, produkcijsku agenciju koja spaja kreativnost i profesionalizam kako bi stvorila nezaboravne trenutke. Specijalizovani smo za muzičke performanse, umjetničke spektakle i organizaciju događaja – od luksuznih gala večeri i privatnih proslava do velikih scenskih produkcija i korporativnih evenata.</p>
+                <p>Dobrodošli u <span class="highlight">Unique Production</span>, produkcijsku agenciju specijalizovanu za muzičke performanse, umjetničke spektakle i organizaciju događaja. Mi spajamo kreativnost i visoki profesionalizam kako bismo kreirali nezaboravne evente – od luksuznih gala večeri i privatnih proslava, do velikih scenskih produkcija i korporativnih događaja.</p>
+                <p>Bilo da je riječ o svečanim gala večerima, muzičko-umjetničkim festivalima, luksuznim privatnim događajima ili korporativnim proslavama, <span class="highlight">Unique Production</span> donosi vrhunski umjetnički i produkcijski standard, prilagođen svakom klijentu.</p>
             </div>
             <div class="section section-2">
-                <p class="quote">“Moja misija je stvaranje <span class="highlight">UNIQUE</span> koncepata i kreativnih rješenja koja svaki događaj pretvaraju u autentično iskustvo. Umjetnost, muzika i emocija su srž svakog momenta koji kreiram.”<br><span class="quote-author">– Verica Čuljković</span></p>
+                <p class="quote">“Moja misija je stvaranje <span class="highlight">UNIQUE</span> koncepata i kreativnih rješenja koja svaki događaj pretvaraju u autentično iskustvo. Umjetnost, muzika i emocija su srž svakog momenta koji kreiram.”</p>
+                <p class="quote-author">– Verica Čuljković</p>
             </div>
             <div class="section section-3">
                 <p>[Prostor za vašu sliku]</p>
             </div>
             <div class="section section-4">
-                <p>Vodi nas <b>Verica Čuljković</b>, violinistkinja i art producent sa preko 15 godina iskustva u muzičkoj i event industriji. Sarađujući s vodećim svjetskim produkcijama, od luksuznih vjenčanja do ekskluzivnih festivala, naš tim donosi prepoznatljiv potpis vrhunske umjetnosti, inovativne scenografije i izuzetnih nastupa.</p>
-                <p>Iza tima koji danas čini <span class="highlight">Unique Production</span> stoje godine uspješnih saradnji sa najvećim resortima, kompanijama i festivalima u Crnoj Gori i inostranstvu, osiguravajući da svaki event bude obilježen vrhunskim organizacionim standardom i umjetničkim doživljajem.</p>
+                <p>Produkcijsku kuću <span class="highlight">Unique Production</span> vodi Verica Čuljković, violinistkinja i art producent sa preko 15 godina iskustva u muzičkoj i event industriji.</p>
+                <p>Sa više od 15 godina iskustva, u producentskom timu nekih od najprestižnijih događaja, sarađujući s vodećim svjetskim produkcijama u event, wedding i art industriji, od luksuznih vjenčanja i gala večeri do ekskluzivnih korporativnih događaja, moj cilj je nastaviti sa realizacijom i stvaranjem projekata koji oblikuju nezaboravne trenutke.</p>
+                <p>Iza tima koji danas čini <span class="highlight">Unique Production</span> su godine uspješnih saradnji sa najvećim resortima, kompanijama i festivalima u Crnoj Gori i inostranstvu, koje su kroz iskustvo osigurale da svaki event ima prepoznatljiv potpis vrhunskog umjetničkog i organizacionih segmenta u produkciji, inovativne scenografije i izuzetnih muzičkih nastupa.</p>
+                <p>Sa bogatim iskustvom u event, muzičkoj i scenskoj umjetnosti, pružamo autentična i inovativna rješenja, prilagođena viziji i potrebama svakog klijenta.</p>
+            </div>
+            <div class="services-card">
                 <h3>Naše usluge</h3>
                 <ul class="services-list">
                     <li><i class="fas fa-music"></i>Muzički performansi</li>
                     <li><i class="fas fa-paint-brush"></i>Art performansi</li>
                     <li><i class="fas fa-cogs"></i>Tehnička produkcija</li>
+                    <li><i class="fas fa-plus-circle"></i>Dodatne usluge</li>
                 </ul>
             </div>
             <div class="cta-section">
