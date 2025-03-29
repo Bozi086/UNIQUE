@@ -60,6 +60,18 @@ body {
 .logo img:hover {
     transform: scale(1.5); /* Blago uvećanje slike na hover */
 }
+@media (max-width: 768px) {
+    .logo img {
+        height: 60px; /* Povećana veličina loga za tablet i mobilne uređaje */
+    }
+}
+
+/* Responsivni dizajn za ekrane do 480px (manji mobilni uređaji) */
+@media (max-width: 480px) {
+    .logo img {
+        height: 50px; /* Povećana veličina loga za manje mobilne uređaje */
+    }
+}
 
 /* Stil za listu linkova u navigaciji */
 .nav-links {
