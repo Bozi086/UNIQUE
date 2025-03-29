@@ -153,7 +153,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr); /* Vraćeno na 4 stupca */
             gap: 20px;
         }
 
@@ -169,7 +169,7 @@
 
         .gallery-item img {
             width: 100%;
-            height: 250px;
+            height: 250px; /* Visina na desktopu */
             object-fit: cover;
             display: block;
             border-radius: 15px 15px 0 0;
@@ -434,14 +434,15 @@
             }
 
             main {
-                padding: 80px 0 40px; /* Uklonjen bočni padding */
-                border-radius: 0; /* Uklonjen radius za punu širinu */
-                box-shadow: none; /* Uklonjena sjena za čist izgled */
+                padding: 80px 0 40px;
+                border-radius: 0;
+                box-shadow: none;
             }
 
             .gallery-container {
-                padding: 20px 0; /* Bez bočnog paddinga */
+                padding: 20px 0;
                 width: 100%;
+                overflow-x: hidden;
             }
 
             .gallery-header h2 {
@@ -455,16 +456,17 @@
             }
 
             .gallery-item {
-                width: 100%; /* Puna širina ekrana */
-                margin: 0; /* Uklonjene margine */
-                border-radius: 0; /* Uklonjen radius za punu širinu */
+                width: 150%; /* Znatno veća širina - 50% više od ekrana */
+                margin-left: -25%; /* Centriranje */
+                border-radius: 0;
+                overflow: visible;
             }
 
             .gallery-item img {
                 width: 100%;
-                height: 60vh; /* Visina proporcionalna ekranu */
+                height: 70vh; /* Povećana visina za proporcionalnost */
                 object-fit: cover;
-                border-radius: 0; /* Uklonjen radius */
+                border-radius: 0;
             }
 
             .gallery-item .caption {
@@ -473,7 +475,7 @@
             }
 
             .gallery-item .caption span {
-                font-size: 18px; /* Veći tekst za bolju čitljivost */
+                font-size: 18px;
             }
 
             .footer-container {
@@ -520,7 +522,12 @@
             }
 
             .gallery-item img {
-                height: 50vh; /* Malo manja visina za vrlo male ekrane */
+                height: 60vh; /* Malo manja visina za vrlo male ekrane */
+            }
+
+            .gallery-item {
+                width: 150%;
+                margin-left: -25%;
             }
 
             .gallery-item .caption span {
