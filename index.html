@@ -303,51 +303,33 @@
             100% { box-shadow: 10px 10px 20px rgba(167, 139, 250, 0.5); }
         }
 
-     .gallery-preview {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Četiri slike po širini */
-    gap: 20px;
-}
+        .gallery-preview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
 
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: block; /* Omogućava da <a> popuni ceo prostor */
-    text-decoration: none; /* Uklanja podvlačenje linka */
-}
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
 
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-}
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
 
-.gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(167, 139, 250, 0.4);
-}
-
-@media (max-width: 768px) {
-    .gallery-preview {
-        grid-template-columns: 1fr; /* Jedna kolona na mobilnom */
-    }
-
-    .gallery-item img {
-        height: 150px; /* Smanjena visina za mobilni */
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-item img {
-        height: 120px; /* Još manja visina za veoma male ekrane */
-    }
-}
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(167, 139, 250, 0.4);
+        }
 
         .services-grid {
             padding: 40px;
@@ -751,10 +733,10 @@
                 <li class="dropdown">
                     <a href="#usluge">Usluge</a>
                     <div class="dropdown-content">
-                        <a href="#usluge1">Usluge 1</a>
-                        <a href="#usluge2">Usluge 2</a>
-                        <a href="#usluge3">Usluge 3</a>
-                        <a href="#usluge4">Usluge 4</a>
+                       <a href="Muzicki-performansi.html">Muzički performansi</a>
+                        <a href="Scenski-art-performansi.html">Scenski art performansi</a>
+                        <a href="Specijalni-efekti-tehnicka-produkcija.html">Specijalni efekti & Tehnička produkcija</a>
+                        <a href="Ostale-usluge.html">Ostale usluge</a>
                     </div>
                 </li>
                 <li><a href="Galerija.html">Galerija</a></li>
@@ -789,11 +771,29 @@
                 <p class="quote-author">– Verica Čuljković</p>
             </div>
 
-             <div class="services-grid">
+            <div class="section">
+                <h2>Pogledajte našu galeriju</h2>
+                <div class="gallery-preview">
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/600x400" alt="Slika 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/600x400" alt="Slika 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://via.placeholder.com/600x400" alt="Slika 3">
+                    </div>
+                </div>
+                <div class="cta-section">
+                    <a href="Galerija.html" class="cta-button">Pogledaj više</a>
+                </div>
+            </div>
+
+            <div class="services-grid">
                 <h2>Naše usluge</h2>
                 <div class="services-grid-container">
                     <div class="service-item">
-                        <img src="naslovna.jpg" alt="Muzički performansi">
+                        <img src="https://via.placeholder.com/600x400" alt="Muzički performansi">
                         <p>Muzički performansi</p>
                     </div>
                     <div class="service-item">
@@ -810,29 +810,6 @@
                     </div>
                 </div>
             </div>
-
-           <div class="section">
-    <h2>Pogledajte našu galeriju</h2>
-    <div class="gallery-preview">
-        <a href="Galerija.html" class="gallery-item">
-            <img src="https://via.placeholder.com/600x400" alt="Slika 1">
-        </a>
-        <a href="Galerija.html" class="gallery-item">
-            <img src="https://via.placeholder.com/600x400" alt="Slika 2">
-        </a>
-        <a href="Galerija.html" class="gallery-item">
-            <img src="https://via.placeholder.com/600x400" alt="Slika 3">
-        </a>
-        <a href="Galerija.html" class="gallery-item">
-            <img src="https://via.placeholder.com/600x400" alt="Slika 4">
-        </a>
-    </div>
-    <div class="cta-section">
-        <a href="Galerija.html" class="cta-button">Pogledaj više</a>
-    </div>
-</div>
-
-           
 
             <div class="cta-section">
                 <p>Kontakt: <a href="tel:+38268256063">+382 68 256 063</a> | <a href="mailto:info@unique.me">info@unique.me</a></p>
