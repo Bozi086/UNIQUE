@@ -177,7 +177,7 @@
         }
 
         .section-1, .section-2, .section-3, .section-4 {
-            min-height: 300px;
+            min-height: 300px; /* Minimalna visina za sve sekcije */
         }
 
         .section h3 {
@@ -242,24 +242,28 @@
         }
 
         .section-3 {
-            height: 400px;
             background-color: #ddd;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: none;
+            overflow: hidden; /* Sprečava prelivanje slike */
+            height: auto; /* Visina se prilagođava sadržaju (slika ili tekst) */
         }
 
-        .section-3 p {
-            color: #666;
-            font-size: 18px;
-            font-style: italic;
-            text-align: center;
+        .section-3 img {
+            max-width: 500px; /* Maksimalna širina slike */
+            width: 100%; /* Slika se prilagođava širini kontejnera */
+            height: auto; /* Zadržava proporcije */
+            object-fit: cover; /* Slika popunjava prostor uz očuvanje proporcija */
+            border-radius: 10px; /* Zaobljeni uglovi */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Senka za dubinu */
         }
 
         .section-4 {
             border: 3px solid #a78bfa;
             position: relative;
+            height: auto; /* Visina se prilagođava sadržaju */
         }
 
         .services-card {
@@ -535,8 +539,13 @@
             }
 
             .section-3 {
-                height: 300px;
+                height: 300px; /* Fiksna visina za mobilne uređaje */
                 order: 2;
+            }
+
+            .section-3 img {
+                max-width: 100%; /* Smanjena širina za mobilne uređaje */
+                max-height: 300px; /* Prilagođena visina za mobilne uređaje */
             }
 
             .section-4 {
@@ -621,7 +630,11 @@
             }
 
             .section-3 {
-                height: 250px;
+                height: 250px; /* Fiksna visina za manje ekrane */
+            }
+
+            .section-3 img {
+                max-height: 250px; /* Prilagođena visina za manje ekrane */
             }
         }
     </style>
@@ -671,7 +684,7 @@
                 <p class="quote-author">– Verica Čuljković</p>
             </div>
             <div class="section section-3">
-                <p>[Prostor za vašu sliku]</p>
+                <img src="verica-culjkovic.jpg" alt="Verica Čuljković">
             </div>
             <div class="section section-4">
                 <p>Produkcijsku kuću <span class="highlight">Unique Production</span> vodi Verica Čuljković, violinistkinja i art producent sa preko 15 godina iskustva u muzičkoj i event industriji.</p>
