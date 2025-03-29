@@ -61,15 +61,37 @@ body {
     transform: scale(1.15); /* Blago uvećanje slike na hover */
 }
 @media (max-width: 768px) {
+    .logo {
+        margin-left: 5px; /* Mala margina za pozicioniranje */
+    }
+
     .logo img {
-        height: 90px; /* Povećana veličina loga za tablet i mobilne uređaje */
+        height: 70px; /* Duplo veće od originalnih 35px */
+        width: auto;
+        margin: 5px; /* Mala margina da ne dodiruje ivice potpuno */
+    }
+
+    .navbar {
+        padding: 10px; /* Smanjujemo padding da logo stane */
+        min-height: 80px; /* Povećavamo visinu navigacionog bara za veći logo */
+    }
+
+    .hamburger {
+        margin-right: 10px; /* Prilagođavamo marginu hamburger menija */
     }
 }
 
 /* Responsivni dizajn za ekrane do 480px (manji mobilni uređaji) */
 @media (max-width: 480px) {
     .logo img {
-        height: 70px; /* Povećana veličina loga za manje mobilne uređaje */
+        height: 60px; /* Duplo veće od originalnih 30px */
+        width: auto;
+        margin: 5px;
+    }
+
+    .navbar {
+        padding: 8px; /* Još manji padding za manje ekrane */
+        min-height: 70px; /* Prilagođena visina za logo */
     }
 }
 
