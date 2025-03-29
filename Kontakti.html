@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -35,12 +36,28 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .logo {
-            color: #fff;
-            font-size: 24px;
-            margin-left: 20px;
-            font-weight: bold;
-        }
+       .logo {
+    margin-left: 1px;
+    display: flex;
+    align-items: center;
+}
+
+/* Stil za tekst unutar h1 */
+.logo h1 {
+    font-size: 24px; /* Prilagodi veličinu po potrebi */
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Stil za 'Unique' deo */
+.unique {
+    color: #a78bfa; /* Ljubičasta boja */
+}
+
+/* Stil za 'Production' deo */
+.production {
+    color: #fff; /* Bela boja */
+}
 
         .nav-links {
             list-style: none;
@@ -550,9 +567,9 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <h1>UNICQUE</h1>
-            </div>
+          <div class="logo">
+        <h1><span class="unique">Unique</span><span class="production">Production</span></h1>
+    </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
