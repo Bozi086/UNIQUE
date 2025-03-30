@@ -13,7 +13,6 @@
             box-sizing: border-box;
         }
 
-        /* Stil za telo stranice (body) */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
@@ -24,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Stil za navigacioni bar (preuzeto iz odobrene kontakt stranice) */
         .navbar {
             background-color: #000;
             padding: 15px;
@@ -126,7 +124,6 @@
             display: block;
         }
 
-        /* Stil za hero sekciju (originalni stilovi) */
         .hero {
             position: relative;
             height: 100vh;
@@ -204,7 +201,6 @@
             transform: translateY(-3px);
         }
 
-        /* Animacije */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -221,7 +217,6 @@
             100% { box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3); }
         }
 
-        /* Main content styles (originalni stilovi) */
         main {
             padding: 60px 20px;
             max-width: 1200px;
@@ -473,7 +468,6 @@
             transform: translateY(-3px);
         }
 
-        /* Stilovi za kontakt sekciju */
         .contact-container {
             display: flex;
             justify-content: space-between;
@@ -605,7 +599,6 @@
             box-shadow: 0 5px 15px rgba(167, 139, 250, 0.5);
         }
 
-        /* Footer styles (originalni stilovi) */
         footer {
             background-color: #000;
             color: #fff;
@@ -700,6 +693,30 @@
         .footer-credit a:hover {
             color: #a78bfa;
             transform: none;
+        }
+
+        /* Image Container Styles */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #a78bfa;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(167, 139, 250, 0.7);
+            overflow: hidden;
+            padding: 10px;
+            width: 100%;
+            max-width: 620px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            margin: 40px auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Promijenjeno na contain umjesto cover kako bi se logo prikazao cijeli */
+            display: block;
         }
 
         /* Mobilna optimizacija */
@@ -872,6 +889,16 @@
                 margin: 0 15px;
                 font-size: 24px;
             }
+
+            /* Prilagodba za image-container */
+            .image-container {
+                border-width: 2px;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(167, 139, 250, 0.5);
+                padding: 5px;
+                margin: 20px auto;
+                max-width: 300px; /* Smanjeno za mobilne uređaje */
+            }
         }
 
         @media (max-width: 480px) {
@@ -946,45 +973,17 @@
             .contact-details i {
                 font-size: 18px;
             }
+
+            /* Prilagodba za image-container */
+            .image-container {
+                border-width: 1px;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4);
+                padding: 3px;
+                margin: 10px auto;
+                max-width: 200px; /* Još manje za vrlo male ekrane */
+            }
         }
-
-        .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #a78bfa;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(167, 139, 250, 0.7);
-    overflow: hidden;
-    padding: 10px;
-    width: 100%; /* Relativna širina umjesto fiksne */
-    max-width: 620px; /* Maksimalna širina za veće ekrane */
-    height: auto; /* Visina se prilagođava sadržaju */
-    aspect-ratio: 1 / 1; /* Održava kvadratni omjer */
-    margin: 40px auto; /* Centriranje i razmak */
-}
-
-/* Media query za mobilne uređaje (npr. ekrani manji od 768px) */
-@media (max-width: 768px) {
-    .image-container {
-        border-width: 2px; /* Smanji debljinu okvira na manjim ekranima */
-        border-radius: 10px; /* Blago smanji zaobljenost */
-        box-shadow: 0 10px 25px rgba(167, 139, 250, 0.5); /* Smanji sjenu */
-        padding: 5px; /* Smanji padding */
-        margin: 20px auto; /* Smanji margine */
-    }
-}
-
-/* Dodatna prilagodba za vrlo male ekrane (npr. ispod 480px) */
-@media (max-width: 480px) {
-    .image-container {
-        border-width: 1px; /* Još tanji okvir */
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4); /* Još manja sjena */
-        padding: 3px;
-        margin: 10px auto; /* Minimalne margine */
-    }
-}
     </style>
 </head>
 <body>
@@ -1089,8 +1088,8 @@
             </div>
 
             <div class="image-container">
-        <img src="logo3.jpg" alt="Primjer slike">
-    </div>
+                <img src="logo3.jpg" alt="Primjer slike">
+            </div>
 
             <div class="contact-container">
                 <div class="contact-info">
