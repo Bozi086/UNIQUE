@@ -22,10 +22,10 @@
             overflow-x: hidden;
         }
 
-        /* Navbar stilovi */
+        /* Stil za navigacioni bar (preuzeto iz odobrene kontakt stranice) */
         .navbar {
             background-color: #000;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,10 +37,37 @@
         }
 
         .logo {
-            color: #fff;
-            font-size: 24px;
-            margin-left: 20px;
-            font-weight: bold;
+            margin-left: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+            border: 3px solid #a78bfa;
+        }
+
+        .logo img:hover {
+            transform: scale(1.15);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.3s ease;
         }
 
         .nav-links {
@@ -97,26 +124,11 @@
             display: block;
         }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-
-        .hamburger span {
-            width: 30px;
-            height: 3px;
-            background-color: #fff;
-            margin: 3px 0;
-            transition: all 0.3s ease;
-        }
-
-        /* Main stilovi */
+        /* Main stilovi (originalni stilovi) */
         main {
             padding: 60px 20px;
             max-width: 1200px;
-            margin: 80px auto 0; /* Dodat margin-top zbog fixed navbar-a */
+            margin: 80px auto 0;
             background: linear-gradient(135deg, #f7f7f7 0%, #e8e8e8 100%);
             border-radius: 15px;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
@@ -164,7 +176,7 @@
             font-weight: 600;
         }
 
-        /* Footer stilovi */
+        /* Footer stilovi (originalni stilovi) */
         footer {
             background-color: #000;
             color: #fff;
@@ -276,7 +288,7 @@
             transform: none;
         }
 
-        /* Responsivnost */
+        /* Mobilna optimizacija (preuzeto iz odobrene kontakt stranice) */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -325,6 +337,25 @@
                 transform: rotate(-45deg) translate(7px, -7px);
             }
 
+            .logo {
+                margin-left: 5px;
+            }
+
+            .logo img {
+                height: 50px;
+                width: auto;
+                margin: 5px;
+            }
+
+            .navbar {
+                padding: 10px;
+                min-height: 60px;
+            }
+
+            .hamburger {
+                margin-right: 10px;
+            }
+
             main {
                 padding: 40px 15px;
                 margin-top: 60px;
@@ -365,8 +396,19 @@
         }
 
         @media (max-width: 480px) {
-            .logo {
-                font-size: 20px;
+            .logo img {
+                height: 40px;
+                width: auto;
+                margin: 5px;
+            }
+
+            .navbar {
+                padding: 8px;
+                min-height: 50px;
+            }
+
+            .nav-links {
+                top: 50px;
             }
 
             .section h1 {
@@ -383,7 +425,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>UNICQUE</h1>
+                <img src="logo1.jpg" alt="logo Uniqueproduction">
             </div>
             <div class="hamburger">
                 <span></span>
@@ -423,7 +465,6 @@
                 <ul>
                     <li><a href="index.html">Početna</a></li>
                     <li><a href="O-nama.html">O nama</a></li>
-               
                     <li><a href="Galerija.html">Galerija</a></li>
                     <li><a href="Kontakti.html">Kontakti</a></li>
                 </ul>
