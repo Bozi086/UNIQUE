@@ -6,269 +6,217 @@
     <title>Početna - UNICQUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* Osnovni reset stila za sve elemente */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Osnovni reset stila za sve elemente */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Stil za telo stranice (body) */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
 
-/* Stil za telo stranice (body) */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-}
+        /* Stil za navigacioni bar (preuzeto iz odobrene kontakt stranice) */
+        .navbar {
+            background-color: #000;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
 
-/* Stil za navigacioni bar */
-.navbar {
-    background-color: #000;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
+        .logo {
+            margin-left: 5px;
+            display: flex;
+            align-items: center;
+        }
 
-/* Stil za logo u navigacionom baru */
-.logo {
-    margin-left: 5px;
-    display: flex;
-    align-items: center;
-}
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+            border: 3px solid #a78bfa;
+        }
 
-/* Stil za sliku loga unutar .logo */
-.logo img {
-    height: 60px; /* Visina loga na desktopu - prilagodi po potrebi */
-    width: auto; /* Širina se automatski prilagođava za proporcije */
-    object-fit: contain; /* Očuvava proporcije slike */
-    transition: transform 0.3s ease; /* Glatki efekat za hover */
-    border-radius: 10px; /* Zaobljene ivice loga */
-    border: 3px solid #a78bfa; /* Ljubičasti border od 2px */
-}
+        .logo img:hover {
+            transform: scale(1.15);
+        }
 
-.logo img:hover {
-    transform: scale(1.15); /* Blago uvećanje slike na hover */
-}
-@media (max-width: 768px) {
-    .logo {
-        margin-left: 5px; /* Mala margina za pozicioniranje */
-    }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 15px;
+        }
 
-    .logo img {
-        height: 70px; /* Duplo veće od originalnih 35px */
-        width: auto;
-        margin: 5px; /* Mala margina da ne dodiruje ivice potpuno */
-    }
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
 
-    .navbar {
-        padding: 10px; /* Smanjujemo padding da logo stane */
-        min-height: 80px; /* Povećavamo visinu navigacionog bara za veći logo */
-    }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
 
-    .hamburger {
-        margin-right: 10px; /* Prilagođavamo marginu hamburger menija */
-    }
-}
+        .nav-links li {
+            margin: 0 20px;
+            position: relative;
+        }
 
-/* Responsivni dizajn za ekrane do 480px (manji mobilni uređaji) */
-@media (max-width: 480px) {
-    .logo img {
-        height: 60px; /* Duplo veće od originalnih 30px */
-        width: auto;
-        margin: 5px;
-    }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
 
-    .navbar {
-        padding: 8px; /* Još manji padding za manje ekrane */
-        min-height: 70px; /* Prilagođena visina za logo */
-    }
-}
+        .nav-links a:hover {
+            color: #a78bfa;
+        }
 
-/* Stil za listu linkova u navigaciji */
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
+        .dropdown {
+            position: relative;
+        }
 
-/* Stil za pojedinačne stavke u listi linkova */
-.nav-links li {
-    margin: 0 20px;
-    position: relative;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
 
-/* Stil za linkove unutar navigacije */
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
 
-.nav-links a:hover {
-    color: #a78bfa;
-}
+        .dropdown-content a:hover {
+            color: #a78bfa;
+            background-color: #1a1a1a;
+        }
 
-/* Stil za padajući meni */
-.dropdown {
-    position: relative;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-/* Stil za sadržaj padajućeg menija */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #000;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: 100%;
-    left: 0;
-}
+        /* Stil za hero sekciju (originalni stilovi) */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            overflow: hidden;
+        }
 
-/* Stil za linkove unutar padajućeg menija */
-.dropdown-content a {
-    color: #fff;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
 
-.dropdown-content a:hover {
-    color: #a78bfa;
-    background-color: #1a1a1a;
-}
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
 
-/* Stil za hamburger meni (vidljiv na mobilnim uređajima) */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin-right: 20px;
-}
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease;
+        }
 
-/* Stil za crtice u hamburger meniju */
-.hamburger span {
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin: 3px 0;
-    transition: all 0.3s ease;
-}
+        .hero .subtitle {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 28px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.5s backwards;
+        }
 
-/* Stil za hero sekciju (naslovna sekcija sa videom) */
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-    overflow: hidden;
-}
+        .hero .highlight {
+            color: #a78bfa;
+            font-weight: 600;
+        }
 
-/* Stil za tamni prekrivni sloj preko videa u hero sekciji */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
+        .hero .cta-button {
+            background: linear-gradient(45deg, #a78bfa, #7c3aed);
+            color: #fff;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            animation: pulseShadow 1.5s infinite;
+            transition: transform 0.3s ease;
+        }
 
-/* Stil za video u hero sekciji */
-.hero video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
+        .hero .cta-button:hover {
+            transform: translateY(-3px);
+        }
 
-/* Stil za sadržaj unutar hero sekcije */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
+        /* Animacija za fadeInDown efekat */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* Stil za naslov u hero sekciji */
-.hero h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    animation: fadeInDown 1s ease;
-}
+        /* Animacija za fadeInUp efekat */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* Stil za podnaslov u hero sekciji */
-.hero .subtitle {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: 28px;
-    margin-bottom: 30px;
-    animation: fadeInUp 1s ease 0.5s backwards;
-}
-
-/* Stil za istaknuti tekst u hero sekciji */
-.hero .highlight {
-    color: #a78bfa;
-    font-weight: 600;
-}
-
-/* Stil za dugme u hero sekciji */
-.hero .cta-button {
-    background: linear-gradient(45deg, #a78bfa, #7c3aed);
-    color: #fff;
-    padding: 16px 40px;
-    border: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    animation: pulseShadow 1.5s infinite;
-    transition: transform 0.3s ease;
-}
-
-.hero .cta-button:hover {
-    transform: translateY(-3px);
-}
-
-/* Animacija za fadeInDown efekat */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Animacija za fadeInUp efekat */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-        /* Main content styles */
+        /* Main content styles (originalni stilovi) */
         main {
             padding: 120px 20px 60px;
             max-width: 1200px;
@@ -334,7 +282,7 @@ body {
         }
 
         .section-1, .section-2, .section-3, .section-4 {
-            min-height: 300px; /* Minimalna visina za sve sekcije */
+            min-height: 300px;
         }
 
         .section h3 {
@@ -404,23 +352,23 @@ body {
             align-items: center;
             justify-content: center;
             box-shadow: none;
-            overflow: hidden; /* Sprečava prelivanje slike */
-            height: auto; /* Visina se prilagođava sadržaju na desktopu */
+            overflow: hidden;
+            height: auto;
         }
 
         .section-3 img {
-            max-width: 500px; /* Maksimalna širina slike */
-            width: 100%; /* Slika se prilagođava širini kontejnera */
-            height: auto; /* Zadržava proporcije */
-            object-fit: cover; /* Slika popunjava prostor uz očuvanje proporcija */
-            border-radius: 10px; /* Zaobljeni uglovi */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Senka za dubinu */
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .section-4 {
             border: 3px solid #a78bfa;
             position: relative;
-            height: auto; /* Visina se prilagođava sadržaju */
+            height: auto;
         }
 
         .services-card {
@@ -609,7 +557,7 @@ body {
             transform: none;
         }
 
-        /* Mobilna optimizacija */
+        /* Mobilna optimizacija (preuzeto iz odobrene kontakt stranice) */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -658,6 +606,25 @@ body {
                 transform: rotate(-45deg) translate(7px, -7px);
             }
 
+            .logo {
+                margin-left: 5px;
+            }
+
+            .logo img {
+                height: 50px;
+                width: auto;
+                margin: 5px;
+            }
+
+            .navbar {
+                padding: 10px;
+                min-height: 60px;
+            }
+
+            .hamburger {
+                margin-right: 10px;
+            }
+
             main {
                 padding: 80px 15px 40px;
             }
@@ -696,13 +663,13 @@ body {
             }
 
             .section-3 {
-                height: 400px; /* Povećana visina za mobilne uređaje (<768px) */
+                height: 400px;
                 order: 2;
             }
 
             .section-3 img {
-                max-width: 100%; /* Smanjena širina za mobilne uređaje */
-                max-height: 400px; /* Povećana visina slike za mobilne uređaje */
+                max-width: 100%;
+                max-height: 400px;
             }
 
             .section-4 {
@@ -749,8 +716,19 @@ body {
         }
 
         @media (max-width: 480px) {
-            .logo {
-                font-size: 20px;
+            .logo img {
+                height: 40px;
+                width: auto;
+                margin: 5px;
+            }
+
+            .navbar {
+                padding: 8px;
+                min-height: 50px;
+            }
+
+            .nav-links {
+                top: 50px;
             }
 
             .intro-section h1 {
@@ -787,11 +765,11 @@ body {
             }
 
             .section-3 {
-                height: 350px; /* Povećana visina za manje ekrane (<480px) */
+                height: 350px;
             }
 
             .section-3 img {
-                max-height: 350px; /* Povećana visina slike za manje ekrane */
+                max-height: 350px;
             }
         }
     </style>
@@ -871,7 +849,6 @@ body {
                 <ul>
                     <li><a href="index.html">Početna</a></li>
                     <li><a href="O-nama.html">O nama</a></li>
-                  
                     <li><a href="Galerija.html">Galerija</a></li>
                     <li><a href="Kontakti.html">Kontakti</a></li>
                 </ul>
