@@ -22,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* Stil za navigacioni bar (preuzeto iz odobrene kontakt stranice) */
         .navbar {
             background-color: #000;
             padding: 15px;
@@ -124,7 +123,6 @@
             display: block;
         }
 
-        /* Main content styles (originalni stilovi) */
         main {
             padding: 100px 0;
             background: #f7f7f7;
@@ -170,6 +168,30 @@
             margin: 0 auto;
         }
 
+        .gallery-filters {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery-filters button {
+            background-color: #fff;
+            border: 1px solid #a78bfa;
+            color: #a78bfa;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .gallery-filters button.active,
+        .gallery-filters button:hover {
+            background-color: #a78bfa;
+            color: #fff;
+        }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -198,7 +220,7 @@
             box-shadow: 0 10px 30px rgba(167, 139, 250, 0.4);
         }
 
-        /* Modal styles (originalni stilovi) */
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -326,21 +348,6 @@
             transform: translateX(5px);
         }
 
-        .footer-dropdown .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #000;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 100%;
-            top: 0;
-        }
-
-        .footer-dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .social-links {
             margin-top: 15px;
         }
@@ -376,7 +383,6 @@
             color: #a78bfa;
         }
 
-        /* Mobilna optimizacija (preuzeto iz odobrene kontakt stranice) */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -461,6 +467,12 @@
                 padding: 0 15px;
             }
 
+            .gallery-filters button {
+                padding: 8px 16px;
+                margin: 5px;
+                font-size: 14px;
+            }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -490,14 +502,6 @@
             .social-links a {
                 margin: 0 15px;
             }
-
-            .footer-dropdown .dropdown-content {
-                position: static;
-                box-shadow: none;
-                background-color: #1a1a1a;
-                width: 100%;
-                left: 0;
-            }
         }
 
         @media (max-width: 480px) {
@@ -523,17 +527,22 @@
             .gallery-item img {
                 height: 70vh;
             }
+
+            .gallery-filters button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-           <div class="logo">
-    <a href="index.html">
-        <img src="logo1.jpg" alt="logo Uniqueproduction">
-    </a>
-</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo1.jpg" alt="logo Uniqueproduction">
+                </a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -545,7 +554,7 @@
                 <li class="dropdown">
                     <a href="#usluge">Usluge</a>
                     <div class="dropdown-content">
-                       <a href="Muzicki-performansi.html">Muzički performansi</a>
+                        <a href="Muzicki-performansi.html">Muzički performansi</a>
                         <a href="Scenski-art-performansi.html">Scenski art performansi</a>
                         <a href="Specijalni-efekti-tehnicka-produkcija.html">Specijalni efekti & Tehnička produkcija</a>
                         <a href="Ostale-usluge.html">Ostale usluge</a>
@@ -563,30 +572,36 @@
                 <h2>Galerija</h2>
                 <p>Pogledajte našu kolekciju inspirativnih trenutaka i vizuelnih doživljaja koji govore sami za sebe.</p>
             </div>
+            <div class="gallery-filters">
+                <button data-filter="all" class="active">Sve</button>
+                <button data-filter="gala-veceri">Gala večeri</button>
+                <button data-filter="muzicki-festival">Muzički festival</button>
+                <button data-filter="scenski-spektakl">Scenski spektakl</button>
+                <button data-filter="korporativni-dogadjaji">Korporativni događaji</button>
+            </div>
             <div class="gallery-grid">
-                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
-                    <img src="https://via.placeholder.com/600x400" alt="Slika 1">
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="gala-veceri">
+                    <img src="https://via.placeholder.com/600x400" alt="Gala večera 1">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
-                    <img src="https://via.placeholder.com/600x400" alt="Slika 2">
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
+                    <img src="https://via.placeholder.com/600x400" alt="Muzički festival 1">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
-                    <img src="https://via.placeholder.com/600x400" alt="Slika 3">
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="scenski-spektakl">
+                    <img src="https://via.placeholder.com/600x400" alt="Scenski spektakl 1">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
-                    <img src="https://via.placeholder.com/600x400" alt="Slika 4">
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="korporativni-dogadjaji">
+                    <img src="https://via.placeholder.com/600x400" alt="Korporativni događaj 1">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
-                    <img src="https://via.placeholder.com/600x400" alt="Slika 5">
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="gala-veceri">
+                    <img src="https://via.placeholder.com/600x400" alt="Gala večera 2">
                 </div>
-                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800">
-                    <img src="https://via.placeholder.com/600x400" alt="Slika 6">
+                <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
+                    <img src="https://via.placeholder.com/600x400" alt="Muzički festival 2">
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Modal za uvećane slike -->
     <div id="modal" class="modal">
         <span class="modal-close" onclick="closeModal()">×</span>
         <span class="modal-prev" onclick="prevImage()">❮</span>
@@ -630,29 +645,63 @@
 
     <script>
         let currentIndex = 0;
-        const images = Array.from(document.querySelectorAll('.gallery-item')).map(item => item.getAttribute('data-full'));
+        let filteredImages = [];
 
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
+            const filterButtons = document.querySelectorAll('.gallery-filters button');
+            const galleryItems = document.querySelectorAll('.gallery-item');
 
             hamburger.addEventListener('click', () => {
                 hamburger.classList.toggle('active');
                 navLinks.classList.toggle('active');
             });
 
-            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+            // Inicijalno prikazivanje svih slika
+            filteredImages = Array.from(galleryItems).map(item => ({
+                src: item.getAttribute('data-full'),
+                category: item.getAttribute('data-category')
+            }));
+
+            galleryItems.forEach((item, index) => {
                 item.addEventListener('click', () => openModal(index));
             });
 
-            document.querySelector('.modal-close').addEventListener('click', closeModal);
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+                    filterGallery(filter);
+                });
+            });
         });
+
+        function filterGallery(filter) {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            filteredImages = [];
+
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                    filteredImages.push({
+                        src: item.getAttribute('data-full'),
+                        category: category
+                    });
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
 
         function openModal(index) {
             currentIndex = index;
             const modal = document.getElementById('modal');
             const modalImage = document.getElementById('modal-image');
-            modalImage.src = images[currentIndex];
+            modalImage.src = filteredImages[currentIndex].src;
             modal.style.display = 'flex';
         }
 
@@ -662,13 +711,13 @@
         }
 
         function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById('modal-image').src = images[currentIndex];
+            currentIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
+            document.getElementById('modal-image').src = filteredImages[currentIndex].src;
         }
 
         function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById('modal-image').src = images[currentIndex];
+            currentIndex = (currentIndex + 1) % filteredImages.length;
+            document.getElementById('modal-image').src = filteredImages[currentIndex].src;
         }
 
         document.getElementById('modal').addEventListener('click', function(e) {
