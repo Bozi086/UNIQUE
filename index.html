@@ -947,8 +947,8 @@
                 font-size: 18px;
             }
         }
-        /*  logo crni */
-   .image-container {
+
+        .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -957,13 +957,34 @@
     box-shadow: 0 15px 40px rgba(167, 139, 250, 0.7);
     overflow: hidden;
     padding: 10px;
-    width: 620px;
-    height: 620px;
-    margin: 40px auto; /* Dodaje vertikalni razmak i centriranje */
+    width: 100%; /* Relativna širina umjesto fiksne */
+    max-width: 620px; /* Maksimalna širina za veće ekrane */
+    height: auto; /* Visina se prilagođava sadržaju */
+    aspect-ratio: 1 / 1; /* Održava kvadratni omjer */
+    margin: 40px auto; /* Centriranje i razmak */
 }
 
+/* Media query za mobilne uređaje (npr. ekrani manji od 768px) */
+@media (max-width: 768px) {
+    .image-container {
+        border-width: 2px; /* Smanji debljinu okvira na manjim ekranima */
+        border-radius: 10px; /* Blago smanji zaobljenost */
+        box-shadow: 0 10px 25px rgba(167, 139, 250, 0.5); /* Smanji sjenu */
+        padding: 5px; /* Smanji padding */
+        margin: 20px auto; /* Smanji margine */
+    }
+}
 
-
+/* Dodatna prilagodba za vrlo male ekrane (npr. ispod 480px) */
+@media (max-width: 480px) {
+    .image-container {
+        border-width: 1px; /* Još tanji okvir */
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(167, 139, 250, 0.4); /* Još manja sjena */
+        padding: 3px;
+        margin: 10px auto; /* Minimalne margine */
+    }
+}
     </style>
 </head>
 <body>
@@ -1068,7 +1089,7 @@
             </div>
 
             <div class="image-container">
-        <img src="logo3.jpg" alt="Slika">
+        <img src="logo3.jpg" alt="Primjer slike">
     </div>
 
             <div class="contact-container">
