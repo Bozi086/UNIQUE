@@ -22,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* Stil za navigacioni bar (preuzeto iz odobrene kontakt stranice) */
         .navbar {
             background-color: #000;
             padding: 15px;
@@ -40,6 +39,11 @@
             margin-left: 5px;
             display: flex;
             align-items: center;
+        }
+
+        .logo a {
+            text-decoration: none;
+            display: flex;
         }
 
         .logo img {
@@ -124,7 +128,6 @@
             display: block;
         }
 
-        /* Main stilovi (originalni stilovi) */
         main {
             padding: 60px 20px;
             max-width: 1200px;
@@ -176,7 +179,63 @@
             font-weight: 600;
         }
 
-        /* Footer stilovi (originalni stilovi) */
+        .section ul {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            text-align: justify;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Stilovi za sliku */
+        .section .performance-image {
+            display: block;
+            width: 750px;
+            height: 550px;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section .performance-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Stilovi za centrirani paragraf i dugme */
+        .section .centered-contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .section .bold-text {
+            font-weight: 700;
+        }
+
+        .section .contact-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #a78bfa;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .section .contact-btn:hover {
+            background-color: #8b5cf6;
+            transform: scale(1.05);
+        }
+
         footer {
             background-color: #000;
             color: #fff;
@@ -237,21 +296,6 @@
             transform: translateX(5px);
         }
 
-        .footer-dropdown .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #000;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 100%;
-            top: 0;
-        }
-
-        .footer-dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .social-links {
             margin-top: 15px;
         }
@@ -288,7 +332,7 @@
             transform: none;
         }
 
-        /* Mobilna optimizacija (preuzeto iz odobrene kontakt stranice) */
+        /* Mobilna optimizacija */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -373,6 +417,20 @@
                 font-size: 16px;
             }
 
+            .section ul {
+                font-size: 16px;
+            }
+
+            .section .contact-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .section .performance-image {
+                width: 100%;
+                height: auto;
+            }
+
             .footer-container {
                 flex-direction: column;
                 text-align: center;
@@ -418,17 +476,31 @@
             .section p {
                 font-size: 14px;
             }
+
+            .section ul {
+                font-size: 14px;
+            }
+
+            .section .contact-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .section .performance-image {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-                    <div class="logo">
-    <a href="index.html">
-        <img src="logo1.jpg" alt="logo Uniqueproduction">
-    </a>
-</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo1.jpg" alt="logo Uniqueproduction">
+                </a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -455,8 +527,17 @@
     <main>
         <div class="section">
             <h1>Specijalni efekti & Tehnička produkcija</h1>
-            <p>Dobrodošli na stranicu posvećenu <span class="highlight">Specijalnim efektima i Tehničkoj produkciji</span> u okviru Unique Production. Ovde možete saznati više o našim uslugama koje transformišu događaje kroz najsavremeniju tehnologiju i kreativne efekte.</p>
-            <p>Pružamo kompletna rešenja za rasvetu, zvuk, specijalne efekte poput pirotehnike, magle i laserskih projekcija, kao i tehničku podršku za sve vrste događaja – od koncerata i pozorišnih predstava do korporativnih skupova. Kontaktirajte nas za više informacija o tome kako možemo vaš događaj učiniti vizuelno i tehnički savršenim.</p>
+            <p>Dobrodošli na stranicu posvećenu <span class="highlight">Specijalnim efektima & Tehničkoj produkciji</span> u okviru Unique Production. Ovde možete saznati više o našim uslugama koje vaš događaj čine vizuelno impresivnim i tehnički besprekorno izvedenim.</p>
+            <img src="Specijalni efekti & Tehnička produkcija.jpg" alt="Specijalni efekti & Tehnička produkcija" class="performance-image">
+            <ul>
+                <li><span class="highlight">Suvi led</span> – magični efekat dima za posebne trenutke</li>
+                <li><span class="highlight">Pirotehnika</span> – spektakularni vatrometi i scenski efekti</li>
+                <li><span class="highlight">Kompletna tehnička produkcija</span> – ozvučenje, rasveta i video podrška</li>
+            </ul>
+            <div class="centered-contact">
+                <p class="bold-text">Kontaktirajte nas za više informacija o tome kako možemo unaprediti vaš sledeći događaj specijalnim efektima i profesionalnom tehničkom produkcijom.</p>
+                <a href="Kontakti.html" class="contact-btn">Kontaktirajte nas</a>
+            </div>
         </div>
     </main>
 
@@ -497,10 +578,14 @@
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
 
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            } else {
+                console.error('Hamburger ili nav-links elementi nisu pronađeni u DOM-u.');
+            }
         });
     </script>
 </body>
