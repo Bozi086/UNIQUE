@@ -41,6 +41,11 @@
             align-items: center;
         }
 
+        .logo a {
+            text-decoration: none;
+            display: flex;
+        }
+
         .logo img {
             height: 50px;
             width: auto;
@@ -172,6 +177,42 @@
         .section .highlight {
             color: #a78bfa;
             font-weight: 600;
+        }
+
+        .section ul {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            text-align: justify;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Stilovi za centrirani paragraf i dugme */
+        .section .centered-contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .section .contact-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .section .contact-btn:hover {
+            background-color: #a78bfa;
+            transform: scale(1.05);
         }
 
         footer {
@@ -370,6 +411,15 @@
                 font-size: 16px;
             }
 
+            .section ul {
+                font-size: 16px;
+            }
+
+            .section .contact-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
             .footer-container {
                 flex-direction: column;
                 text-align: center;
@@ -415,17 +465,26 @@
             .section p {
                 font-size: 14px;
             }
+
+            .section ul {
+                font-size: 14px;
+            }
+
+            .section .contact-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-                    <div class="logo">
-    <a href="index.html">
-        <img src="logo1.jpg" alt="logo Uniqueproduction">
-    </a>
-</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo1.jpg" alt="logo Uniqueproduction">
+                </a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -451,9 +510,26 @@
 
     <main>
         <div class="section">
-            <h1>Ostale usluge</h1>
-            <p>Dobrodošli na stranicu posvećenu <span class="highlight">Ostalim uslugama</span> u okviru Unique Production. Ovde možete saznati više o dodatnim uslugama koje nudimo kako bismo upotpunili vaš događaj i učinili ga jedinstvenim.</p>
-            <p>Naša ponuda uključuje organizaciju događaja, iznajmljivanje opreme, koordinaciju logistike i prilagođene kreativne koncepte koji odgovaraju vašim specifičnim potrebama. Bilo da planirate venčanje, privatnu proslavu ili veliki festival, mi smo tu da vam pomognemo. Kontaktirajte nas za više informacija o tome kako možemo podržati vaš sledeći projekat.</p>
+            <h1>Muzički performansi</h1>
+            <p>Dobrodošli na stranicu posvećenu <span class="highlight">Muzičkim performansima</span> u okviru Unique Production. Ovde možete saznati više o našim vrhunskim muzičkim nastupima koji svaki događaj čine posebnim i nezaboravnim.</p>
+            <ul>
+                <li><span class="highlight">Gudački kvartet Unique</span> – sofisticirani zvuk klasične muzike</li>
+                <li><span class="highlight">Duo violina & violončelo</span> – emotivan i elegantan spoj gudača</li>
+                <li><span class="highlight">All Stars String Ensemble Montenegro</span> – orkestar za prestižne događaje</li>
+                <li><span class="highlight">Duo gitara & violina</span> – kombinacija tango i latino ritmova</li>
+                <li><span class="highlight">Duo klavir & violina</span> – bezvremenska klasika za luksuzne događaje</li>
+                <li><span class="highlight">Kvartet 4 violončela</span> – snažan i moćan gudački sastav</li>
+                <li><span class="highlight">Custom gudački ansambl</span> – mogućnost kreiranja sastava (4-6-8+ muzičara)</li>
+                <li><span class="highlight">Električna violina & DJ</span> – moderna sinergija klasične i elektronske muzike</li>
+                <li><span class="highlight">Saxophone/Trumpet & DJ</span> – moderna sinergija klasične i elektronske muzike</li>
+                <li><span class="highlight">Custom bend sa stranim repertoarom</span> – internacionalni hitovi uživo</li>
+                <li><span class="highlight">Saradnja sa mnogim muzičarima u Crnoj Gori i regionu</span></li>
+                <li><span class="highlight">Personalizovani repertoar</span> - dostupan na zahtev</li>
+            </ul>
+            <div class="centered-contact">
+                <p>Kontaktirajte nas za više informacija o tome kako možemo unaprediti vaš sledeći događaj jedinstvenim muzičkim nastupima prilagođenim vašim željama.</p>
+                <a href="Kontakti.html" class="contact-btn">Kontaktirajte nas</a>
+            </div>
         </div>
     </main>
 
@@ -494,7 +570,7 @@
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
 
-            if (hamburger && navLinks) { // Provera da li elementi postoje
+            if (hamburger && navLinks) {
                 hamburger.addEventListener('click', () => {
                     hamburger.classList.toggle('active');
                     navLinks.classList.toggle('active');
