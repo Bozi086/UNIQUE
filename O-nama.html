@@ -7,7 +7,7 @@
     <title>O nama - UNICQUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-      * {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,121 +40,100 @@ body {
 
 /* Stil za logo u navigacionom baru */
 .logo {
-    margin-left: 5px;
+    margin-left: 1px; /* Smanjujemo marginu s leve strane (bilo je 20px) */
     display: flex;
     align-items: center;
 }
 
 /* Stil za sliku loga unutar .logo */
 .logo img {
-    height: 70px; /* Visina loga na desktopu - prilagodi po potrebi */
+    height: 60px; /* Visina loga na desktopu */
     width: auto; /* Širina se automatski prilagođava za proporcije */
     object-fit: contain; /* Očuvava proporcije slike */
     transition: transform 0.3s ease; /* Glatki efekat za hover */
-    border-radius: 10px; /* Zaobljene ivice loga */
-    border: 3px solid #a78bfa; /* Ljubičasti border od 2px */
+    border-radius: 8px; /* Zaobljene ivice loga */
+    border: 4px solid #a78bfa; /* Ljubičasti border od 4px */
+   
 }
 
-.logo img:hover {
-    transform: scale(1.15); /* Blago uvećanje slike na hover */
-}
-@media (max-width: 768px) {
-    .logo {
-        margin-left: 5px; /* Mala margina za pozicioniranje */
-    }
 
-    .logo img {
-        height: 70px; /* Duplo veće od originalnih 35px */
-        width: auto;
-        margin: 5px; /* Mala margina da ne dodiruje ivice potpuno */
-    }
 
-    .navbar {
-        padding: 10px; /* Smanjujemo padding da logo stane */
-        min-height: 80px; /* Povećavamo visinu navigacionog bara za veći logo */
-    }
-
-    .hamburger {
-        margin-right: 10px; /* Prilagođavamo marginu hamburger menija */
-    }
+/* Stil za listu linkova u navigaciji */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
 }
 
-/* Responsivni dizajn za ekrane do 480px (manji mobilni uređaji) */
-@media (max-width: 480px) {
-    .logo img {
-        height: 60px; /* Duplo veće od originalnih 30px */
-        width: auto;
-        margin: 5px;
-    }
-
-    .navbar {
-        padding: 8px; /* Još manji padding za manje ekrane */
-        min-height: 70px; /* Prilagođena visina za logo */
-    }
+/* Stil za pojedinačne stavke u listi linkova */
+.nav-links li {
+    margin: 0 20px;
+    position: relative;
 }
 
-        .nav-links li {
-            margin: 0 20px;
-            position: relative;
-        }
+/* Stil za linkove unutar navigacije */
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
 
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
+.nav-links a:hover {
+    color: #a78bfa;
+}
 
-        .nav-links a:hover {
-            color: #a78bfa;
-        }
+/* Stil za padajući meni */
+.dropdown {
+    position: relative;
+}
 
-        .dropdown {
-            position: relative;
-        }
+/* Stil za sadržaj padajućeg menija */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #000;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            top: 100%;
-            left: 0;
-        }
+/* Stil za linkove unutar padajućeg menija */
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
 
-        .dropdown-content a {
-            color: #fff;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 16px;
-        }
+.dropdown-content a:hover {
+    color: #a78bfa;
+    background-color: #1a1a1a;
+}
 
-        .dropdown-content a:hover {
-            color: #a78bfa;
-            background-color: #1a1a1a;
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+/* Stil za hamburger meni (vidljiv na mobilnim uređajima) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-
-        .hamburger span {
-            width: 30px;
-            height: 3px;
-            background-color: #fff;
-            margin: 3px 0;
-            transition: all 0.3s ease;
-        }
+/* Stil za crtice u hamburger meniju */
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
 
         /* Main content styles */
         main {
