@@ -1,13 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O nama - UNICQUE</title>
+    <title>Početna - UNICQUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-  * {
+
+/* Osnovni reset stila za sve elemente */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,23 +41,58 @@ body {
 
 /* Stil za logo u navigacionom baru */
 .logo {
-    margin-left: 1px; /* Smanjujemo marginu s leve strane (bilo je 20px) */
+    margin-left: 5px;
     display: flex;
     align-items: center;
 }
 
 /* Stil za sliku loga unutar .logo */
 .logo img {
-    height: 60px; /* Visina loga na desktopu */
+    height: 60px; /* Visina loga na desktopu - prilagodi po potrebi */
     width: auto; /* Širina se automatski prilagođava za proporcije */
     object-fit: contain; /* Očuvava proporcije slike */
     transition: transform 0.3s ease; /* Glatki efekat za hover */
-    border-radius: 8px; /* Zaobljene ivice loga */
-    border: 4px solid #a78bfa; /* Ljubičasti border od 4px */
-   
+    border-radius: 10px; /* Zaobljene ivice loga */
+    border: 3px solid #a78bfa; /* Ljubičasti border od 2px */
 }
 
+.logo img:hover {
+    transform: scale(1.15); /* Blago uvećanje slike na hover */
+}
+@media (max-width: 768px) {
+    .logo {
+        margin-left: 5px; /* Mala margina za pozicioniranje */
+    }
 
+    .logo img {
+        height: 70px; /* Duplo veće od originalnih 35px */
+        width: auto;
+        margin: 5px; /* Mala margina da ne dodiruje ivice potpuno */
+    }
+
+    .navbar {
+        padding: 10px; /* Smanjujemo padding da logo stane */
+        min-height: 80px; /* Povećavamo visinu navigacionog bara za veći logo */
+    }
+
+    .hamburger {
+        margin-right: 10px; /* Prilagođavamo marginu hamburger menija */
+    }
+}
+
+/* Responsivni dizajn za ekrane do 480px (manji mobilni uređaji) */
+@media (max-width: 480px) {
+    .logo img {
+        height: 60px; /* Duplo veće od originalnih 30px */
+        width: auto;
+        margin: 5px;
+    }
+
+    .navbar {
+        padding: 8px; /* Još manji padding za manje ekrane */
+        min-height: 70px; /* Prilagođena visina za logo */
+    }
+}
 
 /* Stil za listu linkova u navigaciji */
 .nav-links {
@@ -133,6 +169,103 @@ body {
     background-color: #fff;
     margin: 3px 0;
     transition: all 0.3s ease;
+}
+
+/* Stil za hero sekciju (naslovna sekcija sa videom) */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Stil za tamni prekrivni sloj preko videa u hero sekciji */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Stil za video u hero sekciji */
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Stil za sadržaj unutar hero sekcije */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* Stil za naslov u hero sekciji */
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease;
+}
+
+/* Stil za podnaslov u hero sekciji */
+.hero .subtitle {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 28px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease 0.5s backwards;
+}
+
+/* Stil za istaknuti tekst u hero sekciji */
+.hero .highlight {
+    color: #a78bfa;
+    font-weight: 600;
+}
+
+/* Stil za dugme u hero sekciji */
+.hero .cta-button {
+    background: linear-gradient(45deg, #a78bfa, #7c3aed);
+    color: #fff;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    animation: pulseShadow 1.5s infinite;
+    transition: transform 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Animacija za fadeInDown efekat */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animacija za fadeInUp efekat */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
         /* Main content styles */
