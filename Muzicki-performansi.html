@@ -192,6 +192,18 @@
             margin-bottom: 10px;
         }
 
+        /* Stilovi za sliku */
+        .section .performance-image {
+            display: block;
+            width: 750px;
+            height: 550px;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
         /* Stilovi za centrirani paragraf i dugme */
         .section .centered-contact {
             text-align: center;
@@ -201,7 +213,7 @@
         .section .contact-btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #a78bfa; /* Ljubičasta boja od početka */
+            background-color: #a78bfa;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -211,7 +223,7 @@
         }
 
         .section .contact-btn:hover {
-            background-color: #8b5cf6; /* Tamnija nijansa ljubičaste za hover */
+            background-color: #8b5cf6;
             transform: scale(1.05);
         }
 
@@ -420,6 +432,11 @@
                 padding: 8px 16px;
             }
 
+            .section .performance-image {
+                width: 100%;
+                height: auto;
+            }
+
             .footer-container {
                 flex-direction: column;
                 text-align: center;
@@ -474,6 +491,11 @@
                 font-size: 12px;
                 padding: 6px 12px;
             }
+
+            .section .performance-image {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -513,6 +535,7 @@
             <h1>Muzički performansi</h1>
             <p>Dobrodošli na stranicu posvećenu <span class="highlight">Muzičkim performansima</span> u okviru Unique Production. Ovde možete saznati više o našim vrhunskim muzičkim nastupima koji svaki događaj čine posebnim i nezaboravnim.</p>
             <ul>
+                <img src="naslovna.jpg" alt="Muzički performansi" class="performance-image">
                 <li><span class="highlight">Gudački kvartet Unique</span> – sofisticirani zvuk klasične muzike</li>
                 <li><span class="highlight">Duo violina & violončelo</span> – emotivan i elegantan spoj gudača</li>
                 <li><span class="highlight">All Stars String Ensemble Montenegro</span> – orkestar za prestižne događaje</li>
@@ -527,7 +550,7 @@
                 <li><span class="highlight">Personalizovani repertoar</span> dostupan na zahtev</li>
             </ul>
             <div class="centered-contact">
-                <p>Kontaktirajte nas za više informacija o tome kako možemo unaprediti vaš sledeći događaj jedinstvenim muzičkim nastupima prilagođenim vašim željama.</p>
+                <p><b>Kontaktirajte nas za više informacija o tome kako možemo unaprediti vaš sledeći događaj jedinstvenim muzičkim nastupima prilagođenim vašim željama</b>.</p>
                 <a href="Kontakti.html" class="contact-btn">Kontaktirajte nas</a>
             </div>
         </div>
