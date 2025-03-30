@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -22,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Stil za navigacioni bar (preuzeto iz odobrene kontakt stranice) */
         .navbar {
             background-color: #000;
             padding: 15px;
@@ -40,6 +40,11 @@
             margin-left: 5px;
             display: flex;
             align-items: center;
+        }
+
+        .logo a {
+            text-decoration: none;
+            display: flex;
         }
 
         .logo img {
@@ -124,7 +129,6 @@
             display: block;
         }
 
-        /* Main stilovi (originalni stilovi) */
         main {
             padding: 60px 20px;
             max-width: 1200px;
@@ -176,7 +180,63 @@
             font-weight: 600;
         }
 
-        /* Footer stilovi (originalni stilovi) */
+        .section ul {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            text-align: justify;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Stilovi za sliku */
+        .section .performance-image {
+            display: block;
+            width: 750px;
+            height: 550px;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section .performance-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Stilovi za centrirani paragraf i dugme */
+        .section .centered-contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .section .bold-text {
+            font-weight: 700;
+        }
+
+        .section .contact-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #a78bfa;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .section .contact-btn:hover {
+            background-color: #8b5cf6;
+            transform: scale(1.05);
+        }
+
         footer {
             background-color: #000;
             color: #fff;
@@ -237,21 +297,6 @@
             transform: translateX(5px);
         }
 
-        .footer-dropdown .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #000;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 100%;
-            top: 0;
-        }
-
-        .footer-dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .social-links {
             margin-top: 15px;
         }
@@ -288,7 +333,7 @@
             transform: none;
         }
 
-        /* Mobilna optimizacija (preuzeto iz odobrene kontakt stranice) */
+        /* Mobilna optimizacija */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -373,6 +418,20 @@
                 font-size: 16px;
             }
 
+            .section ul {
+                font-size: 16px;
+            }
+
+            .section .contact-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .section .performance-image {
+                width: 100%;
+                height: auto;
+            }
+
             .footer-container {
                 flex-direction: column;
                 text-align: center;
@@ -418,17 +477,31 @@
             .section p {
                 font-size: 14px;
             }
+
+            .section ul {
+                font-size: 14px;
+            }
+
+            .section .contact-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .section .performance-image {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-                     <div class="logo">
-    <a href="index.html">
-        <img src="logo1.jpg" alt="logo Uniqueproduction">
-    </a>
-</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo1.jpg" alt="logo Uniqueproduction">
+                </a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -440,7 +513,7 @@
                 <li class="dropdown">
                     <a href="#usluge">Usluge</a>
                     <div class="dropdown-content">
-                         <a href="Muzicki-performansi.html">Muzički performansi</a>
+                        <a href="Muzicki-performansi.html">Muzički performansi</a>
                         <a href="Scenski-art-performansi.html">Scenski art performansi</a>
                         <a href="Specijalni-efekti-tehnicka-produkcija.html">Specijalni efekti & Tehnička produkcija</a>
                         <a href="Ostale-usluge.html">Ostale usluge</a>
@@ -455,8 +528,18 @@
     <main>
         <div class="section">
             <h1>Scenski art performansi</h1>
-            <p>Dobrodošli na stranicu posvećenu <span class="highlight">Scenskim art performansima</span> u okviru Unique Production. Ovde možete saznati više o našim jedinstvenim umetničkim nastupima koji spajaju vizuelnu umetnost, scenske efekte i kreativnu režiju kako bi stvorili nezaboravna iskustva.</p>
-            <p>Naša ponuda uključuje scenske predstave, plesne performanse, vizuelne instalacije i multimedijalne projekte, sve prilagođeno vašim potrebama – bilo da je reč o privatnim događajima, festivalima ili korporativnim proslavama. Kontaktirajte nas za više detalja o tome kako možemo obogatiti vaš događaj umetničkim spektaklom.</p>
+            <p>Dobrodošli na stranicu posvećenu <span class="highlight">Scenskim art performansima</span> u okviru Unique Production. Ovde možete saznati više o našim umetničkim nastupima koji donose vizuelnu magiju i uzbuđenje na vaš događaj.</p>
+            <img src="Scenski art performansi.jpg" alt="Scenski art performansi" class="performance-image">
+            <ul>
+                <li><span class="highlight">Akrobatika</span> – spektakularni vazdušni i zemaljski nastupi</li>
+                <li><span class="highlight">Baletski ansambl</span> – elegantne koreografije za posebne prilike</li>
+                <li><span class="highlight">Ples sa vatrom</span> – vatreni performansi koji oduzimaju dah</li>
+                <li><span class="highlight">Voditelj programa</span> – profesionalno vođenje vašeg događaja</li>
+            </ul>
+            <div class="centered-contact">
+                <p class="bold-text">Kontaktirajte nas za više informacija o tome kako možemo unaprediti vaš sledeći događaj jedinstvenim scenskim performansima prilagođenim vašim željama.</p>
+                <a href="Kontakti.html" class="contact-btn">Kontaktirajte nas</a>
+            </div>
         </div>
     </main>
 
@@ -497,10 +580,14 @@
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
 
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            } else {
+                console.error('Hamburger ili nav-links elementi nisu pronađeni u DOM-u.');
+            }
         });
     </script>
 </body>
