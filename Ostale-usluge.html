@@ -425,10 +425,29 @@
                 font-size: 16px;
             }
 
-            .section .contact-btn {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
+          .section .contact-btn {
+    display: inline-block;
+    padding: 25px;
+    background-color: #a78bfa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 25px;
+    position: relative; /* Potrebno za animaciju ako koristimo pseudo-elemente */
+    animation: glow 1.5s infinite ease-in-out; /* Dodajemo animaciju presijavanja */
+}
+
+@media (max-width: 768px) {
+    .section .contact-btn {
+        padding: 35px; /* Još veći padding */
+        border-radius: 25px;
+        font-size: 20px; /* Još veći tekst */
+        width: 100%; /* Puna širina na mobilnom */
+        animation: glow 1.5s infinite ease-in-out; /* Animacija i na mobilnom */
+    }
+}
 
             .section .performance-image {
                 width: 100%;
