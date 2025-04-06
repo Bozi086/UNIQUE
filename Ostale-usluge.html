@@ -219,7 +219,43 @@
             font-weight: 700;
         }
 
-    Specijalni-efekti-tehnicka-produkcija.html
+     .section .contact-btn {
+    display: inline-block;
+    padding: 25px;
+    background-color: #a78bfa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 25px;
+    position: relative; /* Potrebno za animaciju ako koristimo pseudo-elemente */
+    animation: glow 1.5s infinite ease-in-out; /* Dodajemo animaciju presijavanja */
+}
+
+@media (max-width: 768px) {
+    .section .contact-btn {
+        padding: 35px; /* Još veći padding */
+        border-radius: 25px;
+        font-size: 20px; /* Još veći tekst */
+        width: 100%; /* Puna širina na mobilnom */
+        animation: glow 1.5s infinite ease-in-out; /* Animacija i na mobilnom */
+    }
+}
+
+/* Definicija animacije presijavanja */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(167, 138, 250, 0.5); /* Suptilni sjaj */
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(167, 138, 250, 0.8); /* Maksimalni sjaj */
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(167, 138, 250, 0.5); /* Povratak na početak */
+    }
+}
+
         .section .contact-btn:hover {
             background-color: #8b5cf6;
             transform: scale(1.05);
@@ -425,29 +461,10 @@
                 font-size: 16px;
             }
 
-          .section .contact-btn {
-    display: inline-block;
-    padding: 25px;
-    background-color: #a78bfa;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 25px;
-    position: relative; /* Potrebno za animaciju ako koristimo pseudo-elemente */
-    animation: glow 1.5s infinite ease-in-out; /* Dodajemo animaciju presijavanja */
-}
-
-@media (max-width: 768px) {
-    .section .contact-btn {
-        padding: 35px; /* Još veći padding */
-        border-radius: 25px;
-        font-size: 20px; /* Još veći tekst */
-        width: 100%; /* Puna širina na mobilnom */
-        animation: glow 1.5s infinite ease-in-out; /* Animacija i na mobilnom */
-    }
-}
+            .section .contact-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
 
             .section .performance-image {
                 width: 100%;
