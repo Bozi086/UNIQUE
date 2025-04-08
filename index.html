@@ -506,7 +506,7 @@
         }
 
 
-   /* Stil za prilagođeni kontejner */
+  /* Stil za prilagođeni kontejner */
 .custom-container {
     width: 100%; /* Zauzima celu širinu kao ostale sekcije */
     max-width: 1200px; /* Usklađeno sa glavnim kontejnerom (main) */
@@ -518,7 +518,7 @@
     border-radius: 10px; /* Usklađeno sa zaobljenim uglovima */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Osnovna senka */
     margin: 0 auto; /* Centriranje */
-    animation: fadeInUp 1s ease, circlingShadow 4s infinite ease-in-out; /* Dodata animacija ulaza i kruženja senke */
+    animation: fadeInUp 1s ease, circlingShadow 4s infinite ease-in-out; /* Animacija ulaza i kruženja senke */
 }
 
 /* Stil za polje slike */
@@ -584,6 +584,53 @@
     100% {
         box-shadow: 10px 10px 20px rgba(167, 139, 250, 0.6), /* Povratak na desno dole */
                    -10px -10px 20px rgba(167, 139, 250, 0.2); /* Levo gore (slabije) */
+    }
+}
+
+/* Optimizacija za mobilne uređaje */
+@media (max-width: 768px) {
+    .custom-container {
+        padding: 20px; /* Smanjen padding za manje ekrane, usklađeno sa .section */
+    }
+
+    .image-placeholder {
+        width: 300px; /* Smanjena veličina za tablete */
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-container {
+        padding: 15px; /* Još manji padding za mobilne telefone */
+    }
+
+    .image-placeholder {
+        width: 200px; /* Smanjena veličina za male ekrane */
+        height: 200px;
+    }
+
+    /* Smanjivanje senke za manje ekrane da ne izgleda pretrpano */
+    @keyframes circlingShadow {
+        0% {
+            box-shadow: 5px 5px 10px rgba(167, 139, 250, 0.6),
+                       -5px -5px 10px rgba(167, 139, 250, 0.2);
+        }
+        25% {
+            box-shadow: -5px 5px 10px rgba(167, 139, 250, 0.6),
+                        5px -5px 10px rgba(167, 139, 250, 0.2);
+        }
+        50% {
+            box-shadow: -5px -5px 10px rgba(167, 139, 250, 0.6),
+                        5px 5px 10px rgba(167, 139, 250, 0.2);
+        }
+        75% {
+            box-shadow: 5px -5px 10px rgba(167, 139, 250, 0.6),
+                       -5px 5px 10px rgba(167, 139, 250, 0.2);
+        }
+        100% {
+            box-shadow: 5px 5px 10px rgba(167, 139, 250, 0.6),
+                       -5px -5px 10px rgba(167, 139, 250, 0.2);
+        }
     }
 }
 
