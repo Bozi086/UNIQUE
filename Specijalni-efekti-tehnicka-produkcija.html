@@ -553,6 +553,47 @@
                 height: auto;
             }
         }
+
+        /* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgba(128, 128, 128, 0.3); /* Transparent gray */
+    border: 2px solid #a78bfa; /* Purple border */
+    border-radius: 50%; /* Circular shape */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top i {
+    color: #a78bfa; /* Purple arrow */
+    font-size: 20px;
+}
+
+.back-to-top:hover {
+    background-color: rgba(128, 128, 128, 0.5); /* Slightly darker gray on hover */
+    transform: scale(1.1); /* Subtle zoom effect */
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ensure button is accessible and focusable */
+.back-to-top:focus {
+    outline: 2px solid #a78bfa;
+    outline-offset: 2px;
+}
     </style>
 </head>
 <body>
@@ -605,6 +646,10 @@
                 <a href="Kontakti.html" class="contact-btn" data-sr="Kontaktirajte nas" data-en="Contact Us">Kontaktirajte nas</a>
             </div>
         </div>
+
+        <button class="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
     </main>
 
     <footer>
@@ -675,6 +720,28 @@
 
                 localStorage.setItem('selectedLanguage', lang);
             }
+
+            // Back to Top Button Functionality
+const backToTopButton = document.querySelector('.back-to-top');
+
+if (backToTopButton) {
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    // Smooth scroll to top on click
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
             // Load saved language or default to 'sr'
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'sr';
