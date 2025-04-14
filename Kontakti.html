@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-sr="Kontakti - UNICQUE" data-en="Contacts - UNICQUE">Kontakti - UNICQUE</title>
+    <title data-sr="Galerija - UNIQUE" data-en="Gallery - UNIQUE">Galerija - UNIQUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Osnovni reset stila za sve elemente */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Stil za telo stranice (body) */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
@@ -24,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* Stil za navigacioni bar */
         .navbar {
             background-color: #000;
             padding: 15px;
@@ -38,14 +35,12 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Stil za logo u navigacionom baru */
         .logo {
             margin-left: 5px;
             display: flex;
             align-items: center;
         }
 
-        /* Stil za sliku loga unutar .logo */
         .logo img {
             height: 50px;
             width: auto;
@@ -59,7 +54,6 @@
             transform: scale(1.15);
         }
 
-        /* Stil za hamburger meni */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -75,7 +69,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Stil za listu linkova u navigaciji */
         .nav-links {
             list-style: none;
             display: flex;
@@ -98,7 +91,6 @@
             color: #a78bfa;
         }
 
-        /* Stil za padajući meni */
         .dropdown {
             position: relative;
         }
@@ -131,7 +123,6 @@
             display: block;
         }
 
-        /* Language switcher styles - Pomerene ispod navigacionog bara na desnu stranu */
         .language-switcher {
             display: flex;
             justify-content: flex-end;
@@ -162,197 +153,182 @@
             opacity: 1;
         }
 
-        /* Main content styles */
         main {
-            padding: 120px 20px 60px;
-            max-width: 1200px;
+            padding: 100px 0;
+            background: #f7f7f7;
+        }
+
+        .gallery-container {
+            max-width: 1400px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #f7f7f7 0%, #e8e8e8 100%);
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            padding: 0 20px;
         }
 
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-        }
-
-        .contact-info h2 {
+        .gallery-header h2 {
             font-size: 40px;
             color: #222;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             font-weight: 700;
             position: relative;
             padding-bottom: 10px;
             letter-spacing: 1px;
         }
 
-        .contact-info h2::after {
+        .gallery-header h2::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 60px;
             height: 4px;
             background: linear-gradient(to right, #a78bfa, transparent);
         }
 
-        .contact-info p {
+        .gallery-header p {
             font-size: 18px;
             line-height: 1.8;
             color: #666;
-            margin-bottom: 30px;
-        }
-
-        .contact-details {
-            list-style: none;
-        }
-
-        .contact-details li {
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-details li:hover {
-            transform: translateX(10px);
-        }
-
-        .contact-details i {
-            margin-right: 15px;
-            color: #a78bfa;
-            font-size: 24px;
-        }
-
-        .contact-details a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .contact-details a:hover {
-            color: #a78bfa;
-        }
-
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-form::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(167, 139, 250, 0.1), transparent);
-            opacity: 0.3;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .contact-form h3 {
-            font-size: 28px;
-            color: #222;
-            margin-bottom: 25px;
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-form form {
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: none;
-            border-bottom: 2px solid #ddd;
-            background: transparent;
-            font-size: 16px;
-            color: #333;
-            transition: border-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #a78bfa;
-            outline: none;
-            transform: translateY(-2px);
-        }
-
-        .contact-form textarea {
-            height: 140px;
-            resize: none;
-        }
-
-        .contact-form button {
-            background: linear-gradient(45deg, #a78bfa, #7c3aed);
-            color: #fff;
-            padding: 16px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            animation: pulseShadow 1.5s infinite;
-            display: block;
-            width: 100%;
-            max-width: 300px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .contact-form button:hover {
-            transform: translateY(-3px);
+        .gallery-filters {
+            text-align: center;
+            margin-bottom: 30px;
         }
 
-        .contact-form .hidden {
-            display: none !important;
+        .gallery-filters button {
+            background-color: #fff;
+            border: 1px solid #a78bfa;
+            color: #a78bfa;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 25px; /* Zaobljena dugmad */
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Animacije */
-        @keyframes pulseShadow {
-            0% { box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3); }
-            50% { box-shadow: 0 15px 40px rgba(167, 139, 250, 0.7); }
-            100% { box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3); }
+        .gallery-filters button.active,
+        .gallery-filters button:hover {
+            background-color: #a78bfa;
+            color: #fff;
         }
 
-        /* Footer styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(167, 139, 250, 0.4);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(167, 139, 250, 0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 2100;
+        }
+
+        .modal-close:hover {
+            color: #a78bfa;
+        }
+
+        .modal-prev, .modal-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 10px;
+            transition: color 0.3s ease;
+            z-index: 2100;
+        }
+
+        .modal-prev:hover, .modal-next:hover {
+            color: #a78bfa;
+        }
+
+        .modal-prev {
+            left: 20px;
+        }
+
+        .modal-next {
+            right: 20px;
+        }
+
         footer {
             background-color: #000;
             color: #fff;
-            padding: 40px 20px 20px;
+            padding: 40px 20px;
             margin-top: auto;
-            position: relative;
         }
 
         .footer-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -389,7 +365,6 @@
 
         .footer-section ul li {
             margin: 12px 0;
-            position: relative;
         }
 
         .footer-section a {
@@ -436,10 +411,8 @@
 
         .footer-credit a:hover {
             color: #a78bfa;
-            transform: none;
         }
 
-        /* Mobilna optimizacija */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -513,36 +486,36 @@
             }
 
             main {
-                padding: 80px 15px 40px;
+                padding: 80px 0;
             }
 
-            .contact-container {
-                flex-direction: column;
-                padding: 20px;
-                gap: 30px;
+            .gallery-container {
+                padding: 0;
             }
 
-            .contact-info h2 {
+            .gallery-header h2 {
                 font-size: 32px;
             }
 
-            .contact-info p,
-            .contact-details li {
+            .gallery-header p {
                 font-size: 16px;
+                padding: 0 15px;
             }
 
-            .contact-form {
-                padding: 30px;
+            .gallery-filters button {
+                padding: 8px 16px;
+                margin: 5px;
+                font-size: 14px;
             }
 
-            .contact-form h3 {
-                font-size: 24px;
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
-            .contact-form input,
-            .contact-form textarea {
-                font-size: 16px;
-                padding: 12px;
+            .gallery-item img {
+                height: 80vh;
+                border-radius: 0;
             }
 
             .footer-container {
@@ -563,7 +536,6 @@
 
             .social-links a {
                 margin: 0 15px;
-                font-size: 24px;
             }
         }
 
@@ -593,21 +565,17 @@
                 height: 15px;
             }
 
-            .contact-info h2 {
+            .gallery-header h2 {
                 font-size: 28px;
             }
 
-            .contact-form {
-                padding: 20px;
+            .gallery-item img {
+                height: 70vh;
             }
 
-            .contact-form h3 {
-                font-size: 20px;
-            }
-
-            .contact-form button {
-                padding: 14px 30px;
-                font-size: 16px;
+            .gallery-filters button {
+                padding: 6px 12px;
+                font-size: 12px;
             }
         }
     </style>
@@ -648,29 +616,110 @@
     </header>
 
     <main>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 data-sr="Kontaktirajte nas" data-en="Contact Us">Kontaktirajte nas</h2>
-                <p data-sr="Želimo da čujemo od vas! Bilo da planirate događaj ili imate pitanje o našim nastupima, slobodno nam se obratite putem telefona, e-maila ili forme pored." data-en="We’d love to hear from you! Whether you’re planning an event or have a question about our performances, feel free to reach out via phone, email, or the form beside.">Želimo da čujemo od vas! Bilo da planirate događaj ili imate pitanje o našim nastupima, slobodno nam se obratite putem telefona, e-maila ili forme pored.</p>
-                <ul class="contact-details">
-                    <li><i class="fas fa-phone"></i><a href="tel:+38268256063" data-sr="+382 68 256 063" data-en="+382 68 256 063">+382 68 256 063</a></li>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:info@unique.me" data-sr="info@unique.me" data-en="info@unique.me">info@unique.me</a></li>
-                    <li><i class="fas fa-map-marker-alt"></i><span data-sr="Podgorica, Crna Gora" data-en="Podgorica, Montenegro">Podgorica, Crna Gora</span></li>
-                </ul>
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2 data-sr="Galerija" data-en="Gallery">Galerija</h2>
+                <p data-sr="Pogledajte našu kolekciju inspirativnih trenutaka i vizuelnih doživljaja koji govore sami za sebe." data-en="View our collection of inspiring moments and visual experiences that speak for themselves.">Pogledajte našu kolekciju inspirativnih trenutaka i vizuelnih doživljaja koji govore sami za sebe.</p>
             </div>
-            <div class="contact-form">
-                <h3 data-sr="Pošaljite poruku" data-en="Send a Message">Pošaljite poruku</h3>
-                <form action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                    <input type="text" name="name" placeholder="Ime/Name" data-sr-placeholder="Vaše ime" data-en-placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="e-mail" data-sr-placeholder="Vaš e-mail" data-en-placeholder="Your Email" required>
-                    <textarea name="message" placeholder="poruka/message" data-sr-placeholder="Vaša poruka" data-en-placeholder="Your Message" required></textarea>
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                    <button type="submit" data-sr="Pošalji" data-en="Send">Pošalji</button>
-                </form>
+            <div class="gallery-filters">
+                <button data-filter="all" class="active" data-sr="Sve" data-en="All">Sve</button>
+                <button data-filter="vjencanja" data-sr="Vjenčanja i gala večeri" data-en="Weddings & Gala Dinners">Vjenčanja i gala večeri</button>
+                <button data-filter="muzicki-festival" data-sr="Muzički festival" data-en="Music Festival">Muzički festival</button>
+                <button data-filter="scenski-spektakl" data-sr="Scenski spektakl" data-en="Stage Spectacle">Scenski spektakl</button>
+                <button data-filter="korporativni-dogadjaji" data-sr="Korporativni događaji" data-en="Corporate Events">Korporativni događaji</button>
+            </div>
+            <div class="gallery-grid">
+                <!-- Vjenčanja i gala večeri (6 slika) -->
+                <div class="gallery-item" data-full="vjencanje1.jpg" data-category="vjencanja">
+                    <img src="vjencanje1.jpg" alt="Vjenčanja i gala večeri 1">
+                </div>
+                <div class="gallery-item" data-full="vjencanje2.jpg" data-category="vjencanja">
+                    <img src="vjencanje2.jpg" alt="Vjenčanja i gala večeri 2">
+                </div>
+                <div class="gallery-item" data-full="vjencanje3.jpg" data-category="vjencanja">
+                    <img src="vjencanje3.jpg" alt="Vjenčanja i gala večeri 3">
+                </div>
+                <div class="gallery-item" data-full="vjencanje4.jpg" data-category="vjencanja">
+                    <img src="vjencanje4.jpg" alt="Vjenčanja i gala večeri 4">
+                </div>
+                <div class="gallery-item" data-full="vjencanje5.jpg" data-category="vjencanja">
+                    <img src="vjencanje5.jpg" alt="Vjenčanja i gala večeri 5">
+                </div>
+                <div class="gallery-item" data-full="vjencanje6.jpg" data-category="vjencanja">
+                    <img src="vjencanje6.jpg" alt="Vjenčanja i gala večeri 6">
+                </div>
+
+                <!-- Muzički festival (6 slika) -->
+                <div class="gallery-item" data-full="muzicki-festival1.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival1.jpg" alt="Muzički festival 1">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival2.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival2.jpg" alt="Muzički festival 2">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival3.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival3.jpg" alt="Muzički festival 3">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival4.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival4.jpg" alt="Muzički festival 4">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival5.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival5.jpg" alt="Muzički festival 5">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival6.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival6.jpg" alt="Muzički festival 6">
+                </div>
+
+                <!-- Scenski spektakl (6 slika) -->
+                <div class="gallery-item" data-full="scenski-vatra.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-vatra.jpg" alt="Scenski spektakl 1">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl2.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl2.jpg" alt="Scenski spektakl 2">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl3.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl3.jpg" alt="Scenski spektakl 3">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl4.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl4.jpg" alt="Scenski spektakl 4">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl5.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl5.jpg" alt="Scenski spektakl 5">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl6.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl6.jpg" alt="Scenski spektakl 6">
+                </div>
+
+                <!-- Korporativni događaji (6 slika) -->
+                <div class="gallery-item" data-full="korporativni1.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni1.jpg" alt="Korporativni događaj 1">
+                </div>
+                <div class="gallery-item" data-full="korporativni2.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni2.jpg" alt="Korporativni događaj 2">
+                </div>
+                <div class="gallery-item" data-full="korporativni3.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni3.jpg" alt="Korporativni događaj 3">
+                </div>
+                <div class="gallery-item" data-full="korporativni4.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni4.jpg" alt="Korporativni događaj 4">
+                </div>
+                <div class="gallery-item" data-full="korporativni5.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni5.jpg" alt="Korporativni događaj 5">
+                </div>
+                <div class="gallery-item" data-full="korporativni6.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni6.jpg" alt="Korporativni događaj 6">
+                </div>
             </div>
         </div>
     </main>
+
+    <div id="modal" class="modal">
+        <span class="modal-close" onclick="closeModal()">×</span>
+        <span class="modal-prev" onclick="prevImage()">❮</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Uvećana slika">
+        </div>
+        <span class="modal-next" onclick="nextImage()">❯</span>
+    </div>
 
     <footer>
         <div class="footer-container">
@@ -705,9 +754,14 @@
     </footer>
 
     <script>
+        let currentIndex = 0;
+        let filteredImages = [];
+
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
+            const filterButtons = document.querySelectorAll('.gallery-filters button');
+            const galleryItems = document.querySelectorAll('.gallery-item');
             const languageFlags = document.querySelectorAll('.language-flag');
             const elements = document.querySelectorAll('[data-sr][data-en]');
 
@@ -717,16 +771,31 @@
                 navLinks.classList.toggle('active');
             });
 
+            // Inicijalno prikazivanje svih slika
+            filteredImages = Array.from(galleryItems).map(item => ({
+                src: item.getAttribute('data-full'),
+                category: item.getAttribute('data-category')
+            }));
+
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => openModal(index));
+            });
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+                    filterGallery(filter);
+                });
+            });
+
             // Language switcher
             function updateLanguage(lang) {
                 elements.forEach(element => {
                     let text = lang === 'en' ? element.getAttribute('data-en') : element.getAttribute('data-sr');
                     element.innerHTML = text;
-
-                    // Update placeholder attributes if they exist
-                    if (element.hasAttribute('data-sr-placeholder') && element.hasAttribute('data-en-placeholder')) {
-                        element.placeholder = lang === 'en' ? element.getAttribute('data-en-placeholder') : element.getAttribute('data-sr-placeholder');
-                    }
                 });
 
                 document.documentElement.lang = lang;
@@ -753,6 +822,61 @@
                     updateLanguage(lang);
                 });
             });
+        });
+
+        function filterGallery(filter) {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            filteredImages = [];
+
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                    filteredImages.push({
+                        src: item.getAttribute('data-full'),
+                        category: category
+                    });
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(index) {
+            currentIndex = index;
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            modalImage.src = filteredImages[currentIndex].src;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
+            document.getElementById('modal-image').src = filteredImages[currentIndex].src;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % filteredImages.length;
+            document.getElementById('modal-image').src = filteredImages[currentIndex].src;
+        }
+
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this || e.target.classList.contains('modal-content')) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('modal').style.display === 'flex') {
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'Escape') closeModal();
+            }
         });
     </script>
 </body>
