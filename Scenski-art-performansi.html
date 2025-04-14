@@ -245,9 +245,9 @@
             font-weight: 700;
         }
 
-        .section .contact-btn {
+         .section .contact-btn {
             display: inline-block;
-            padding: 20px;
+            padding: 25px;
             background-color: #a78bfa;
             color: #fff;
             text-decoration: none;
@@ -255,6 +255,30 @@
             font-size: 16px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             margin-top: 25px;
+            position: relative;
+            animation: glow 1.5s infinite ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .section .contact-btn {
+                padding: 35px;
+                border-radius: 25px;
+                font-size: 20px;
+                width: 100%;
+                animation: glow 1.5s infinite ease-in-out;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px rgba(167, 138, 250, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(167, 138, 250, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(167, 138, 250, 0.5);
+            }
         }
 
         .section .contact-btn:hover {
