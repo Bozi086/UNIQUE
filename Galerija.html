@@ -123,7 +123,6 @@
             display: block;
         }
 
-        /* Language switcher styles - Pomerene ispod navigacionog bara na desnu stranu */
         .language-switcher {
             display: flex;
             justify-content: flex-end;
@@ -210,7 +209,7 @@
             color: #a78bfa;
             padding: 10px 20px;
             margin: 0 10px;
-            border-radius: 5px;
+            border-radius: 25px; /* Zaobljena dugmad */
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
@@ -624,106 +623,93 @@
             </div>
             <div class="gallery-filters">
                 <button data-filter="all" class="active" data-sr="Sve" data-en="All">Sve</button>
-                <button data-filter="Vjencanja i gala-veceri" data-sr="Vjencanja i gala-veceri" data-en="Weddings and gala dinners
-
-">Vjencanja i gala-veceri</button>
+                <button data-filter="vjencanja" data-sr="Vjenčanja i gala večeri" data-en="Weddings & Gala Dinners">Vjenčanja i gala večeri</button>
                 <button data-filter="muzicki-festival" data-sr="Muzički festival" data-en="Music Festival">Muzički festival</button>
                 <button data-filter="scenski-spektakl" data-sr="Scenski spektakl" data-en="Stage Spectacle">Scenski spektakl</button>
                 <button data-filter="korporativni-dogadjaji" data-sr="Korporativni događaji" data-en="Corporate Events">Korporativni događaji</button>
             </div>
-         <div class="gallery-grid">
-    <!-- Gala večeri (7 slika) -->
-    <div class="gallery-item" data-full="vjencanje1.jpg" data-category="Vjencanja i gala-veceri">
-        <img src="vjencanje1.jpg" alt="Gala večera 1">
-    </div>
-    <div class="gallery-item" data-full="vjencanje2.jpg" data-category="Vjencanja i gala-veceri">
-        <img src="vjencanje2.jpg" alt="Vjencanja i gala-veceri 2">
-    </div>
-    <div class="gallery-item" data-full="vencanje3.jpg" data-category="Vjencanja i gala-veceri">
-        <img src="vencanje3.jpg" alt="Vjencanja i gala-veceri 3">
-    </div>
-    <div class="gallery-item" data-full="vjencanje4.jpg" data-category="Vjencanja i gala-veceri">
-        <img src="vjencanje4.jpg" alt="Vjencanja i gala-veceri 4">
-    </div>
-    <div class="gallery-item" data-full="vjencanje5.jpg" data-category="Vjencanja i gala-veceri">
-        <img src="vjencanje5.jpg" alt="Vjencanja i gala-veceri 5">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="Vjencanja i gala-veceri">
-        <img src="https://via.placeholder.com/600x400" alt="Vjencanja i gala-veceri 6">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="Vjencanja i gala-veceri">
-        <img src="https://via.placeholder.com/600x400" alt="Vjencanja i gala-veceri 7">
-    </div>
+            <div class="gallery-grid">
+                <!-- Vjenčanja i gala večeri (6 slika) -->
+                <div class="gallery-item" data-full="vjencanje1.jpg" data-category="vjencanja">
+                    <img src="vjencanje1.jpg" alt="Vjenčanja i gala večeri 1">
+                </div>
+                <div class="gallery-item" data-full="vjencanje2.jpg" data-category="vjencanja">
+                    <img src="vjencanje2.jpg" alt="Vjenčanja i gala večeri 2">
+                </div>
+                <div class="gallery-item" data-full="vjencanje3.jpg" data-category="vjencanja">
+                    <img src="vjencanje3.jpg" alt="Vjenčanja i gala večeri 3">
+                </div>
+                <div class="gallery-item" data-full="vjencanje4.jpg" data-category="vjencanja">
+                    <img src="vjencanje4.jpg" alt="Vjenčanja i gala večeri 4">
+                </div>
+                <div class="gallery-item" data-full="vjencanje5.jpg" data-category="vjencanja">
+                    <img src="vjencanje5.jpg" alt="Vjenčanja i gala večeri 5">
+                </div>
+                <div class="gallery-item" data-full="vjencanje6.jpg" data-category="vjencanja">
+                    <img src="vjencanje6.jpg" alt="Vjenčanja i gala večeri 6">
+                </div>
 
-    <!-- Muzički festival (7 slika) -->
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
-        <img src="https://via.placeholder.com/600x400" alt="Muzički festival 1">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
-        <img src="https://via.placeholder.com/600x400" alt="Muzički festival 2">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
-        <img src="https://via.placeholder.com/600x400" alt="Muzički festival 3">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
-        <img src="https://via.placeholder.com/600x400" alt="Muzički festival 4">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
-        <img src="https://via.placeholder.com/600x400" alt="Muzički festival 5">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
-        <img src="https://via.placeholder.com/600x400" alt="Muzički festival 6">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="muzicki-festival">
-        <img src="https://via.placeholder.com/600x400" alt="Muzički festival 7">
-    </div>
+                <!-- Muzički festival (6 slika) -->
+                <div class="gallery-item" data-full="muzicki-festival1.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival1.jpg" alt="Muzički festival 1">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival2.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival2.jpg" alt="Muzički festival 2">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival3.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival3.jpg" alt="Muzički festival 3">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival4.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival4.jpg" alt="Muzički festival 4">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival5.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival5.jpg" alt="Muzički festival 5">
+                </div>
+                <div class="gallery-item" data-full="muzicki-festival6.jpg" data-category="muzicki-festival">
+                    <img src="muzicki-festival6.jpg" alt="Muzički festival 6">
+                </div>
 
-    <!-- Scenski spektakl (7 slika) -->
-    <div class="gallery-item" data-full="scenski-vatra.jpg" data-category="scenski-spektakl">
-        <img src="scenski-vatra.jpg" alt="Scenski spektakl 1">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="scenski-spektakl">
-        <img src="https://via.placeholder.com/600x400" alt="Scenski spektakl 2">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="scenski-spektakl">
-        <img src="https://via.placeholder.com/600x400" alt="Scenski spektakl 3">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="scenski-spektakl">
-        <img src="https://via.placeholder.com/600x400" alt="Scenski spektakl 4">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="scenski-spektakl">
-        <img src="https://via.placeholder.com/600x400" alt="Scenski spektakl 5">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="scenski-spektakl">
-        <img src="https://via.placeholder.com/600x400" alt="Scenski spektakl 6">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="scenski-spektakl">
-        <img src="https://via.placeholder.com/600x400" alt="Scenski spektakl 7">
-    </div>
+                <!-- Scenski spektakl (6 slika) -->
+                <div class="gallery-item" data-full="scenski-vatra.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-vatra.jpg" alt="Scenski spektakl 1">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl2.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl2.jpg" alt="Scenski spektakl 2">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl3.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl3.jpg" alt="Scenski spektakl 3">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl4.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl4.jpg" alt="Scenski spektakl 4">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl5.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl5.jpg" alt="Scenski spektakl 5">
+                </div>
+                <div class="gallery-item" data-full="scenski-spektakl6.jpg" data-category="scenski-spektakl">
+                    <img src="scenski-spektakl6.jpg" alt="Scenski spektakl 6">
+                </div>
 
-    <!-- Korporativni događaji (7 slika) -->
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="korporativni-dogadjaji">
-        <img src="https://via.placeholder.com/600x400" alt="Korporativni događaj 1">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="korporativni-dogadjaji">
-        <img src="https://via.placeholder.com/600x400" alt="Korporativni događaj 2">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="korporativni-dogadjaji">
-        <img src="https://via.placeholder.com/600x400" alt="Korporativni događaj 3">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="korporativni-dogadjaji">
-        <img src="https://via.placeholder.com/600x400" alt="Korporativni događaj 4">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="korporativni-dogadjaji">
-        <img src="https://via.placeholder.com/600x400" alt="Korporativni događaj 5">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="korporativni-dogadjaji">
-        <img src="https://via.placeholder.com/600x400" alt="Korporativni događaj 6">
-    </div>
-    <div class="gallery-item" data-full="https://via.placeholder.com/1200x800" data-category="korporativni-dogadjaji">
-        <img src="https://via.placeholder.com/600x400" alt="Korporativni događaj 7">
-    </div>
-</div>
+                <!-- Korporativni događaji (6 slika) -->
+                <div class="gallery-item" data-full="korporativni1.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni1.jpg" alt="Korporativni događaj 1">
+                </div>
+                <div class="gallery-item" data-full="korporativni2.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni2.jpg" alt="Korporativni događaj 2">
+                </div>
+                <div class="gallery-item" data-full="korporativni3.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni3.jpg" alt="Korporativni događaj 3">
+                </div>
+                <div class="gallery-item" data-full="korporativni4.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni4.jpg" alt="Korporativni događaj 4">
+                </div>
+                <div class="gallery-item" data-full="korporativni5.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni5.jpg" alt="Korporativni događaj 5">
+                </div>
+                <div class="gallery-item" data-full="korporativni6.jpg" data-category="korporativni-dogadjaji">
+                    <img src="korporativni6.jpg" alt="Korporativni događaj 6">
+                </div>
+            </div>
+        </div>
     </main>
 
     <div id="modal" class="modal">
