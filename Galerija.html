@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -210,7 +209,7 @@
             color: #a78bfa;
             padding: 10px 20px;
             margin: 0 10px;
-            border-radius: 25px; /* Zaobljena dugmad */
+            border-radius: 25px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
@@ -624,29 +623,29 @@
             </div>
             <div class="gallery-filters">
                 <button data-filter="all" class="active" data-sr="Sve" data-en="All">Sve</button>
-                <button data-filter="Vjenčanja i gala večeri" data-sr="Vjenčanja i gala večeri" data-en="Weddings & Gala Dinners">Vjenčanja i gala večeri</button>
+                <button data-filter="vjencanja-gala" data-sr="Vjenčanja i gala večeri" data-en="Weddings & Gala Dinners">Vjenčanja i gala večeri</button>
                 <button data-filter="muzicki-festival" data-sr="Muzički festival" data-en="Music Festival">Muzički festival</button>
                 <button data-filter="scenski-spektakl" data-sr="Scenski spektakl" data-en="Stage Spectacle">Scenski spektakl</button>
                 <button data-filter="korporativni-dogadjaji" data-sr="Korporativni događaji" data-en="Corporate Events">Korporativni događaji</button>
             </div>
             <div class="gallery-grid">
                 <!-- Vjenčanja i gala večeri (6 slika) -->
-                <div class="gallery-item" data-full="vjencanje1.jpg" data-category="Vjenčanja i gala večeri">
+                <div class="gallery-item" data-full="vjencanje1.jpg" data-category="vjencanja-gala">
                     <img src="vjencanje1.jpg" alt="Vjenčanja i gala večeri 1">
                 </div>
-                <div class="gallery-item" data-full="vjencanje2.jpg" data-category="Vjenčanja i gala večeri">
+                <div class="gallery-item" data-full="vjencanje2.jpg" data-category="vjencanja-gala">
                     <img src="vjencanje2.jpg" alt="Vjenčanja i gala večeri 2">
                 </div>
-                <div class="gallery-item" data-full="vjencanje3.jpg" data-category="Vjenčanja i gala večeri">
+                <div class="gallery-item" data-full="vjencanje3.jpg" data-category="vjencanja-gala">
                     <img src="vjencanje3.jpg" alt="Vjenčanja i gala večeri 3">
                 </div>
-                <div class="gallery-item" data-full="vjencanje4.jpg" data-category="Vjenčanja i gala večeri">
+                <div class="gallery-item" data-full="vjencanje4.jpg" data-category="vjencanja-gala">
                     <img src="vjencanje4.jpg" alt="Vjenčanja i gala večeri 4">
                 </div>
-                <div class="gallery-item" data-full="vjencanje5.jpg" data-category="Vjenčanja i gala večeri">
+                <div class="gallery-item" data-full="vjencanje5.jpg" data-category="vjencanja-gala">
                     <img src="vjencanje5.jpg" alt="Vjenčanja i gala večeri 5">
                 </div>
-                <div class="gallery-item" data-full="vjencanje6.jpg" data-category="Vjenčanja i gala večeri">
+                <div class="gallery-item" data-full="vjencanje6.jpg" data-category="vjencanja-gala">
                     <img src="vjencanje6.jpg" alt="Vjenčanja i gala večeri 6">
                 </div>
 
@@ -757,6 +756,7 @@
     <script>
         let currentIndex = 0;
         let filteredImages = [];
+        let allImages = [];
 
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.querySelector('.hamburger');
@@ -772,15 +772,31 @@
                 navLinks.classList.toggle('active');
             });
 
-            // Inicijalno prikazivanje svih slika
-            filteredImages = Array.from(galleryItems).map(item => ({
+            // Inicijalno prikazivanje svih slika i čuvanje svih slika
+            allImages = Array.from(galleryItems).map(item => ({
                 src: item.getAttribute('data-full'),
                 category: item.getAttribute('data-category')
             }));
+            filteredImages = [...allImages];
 
-            galleryItems.forEach((item, index) => {
-                item.addEventListener('click', () => openModal(index));
-            });
+            // Postavljanje klik događaja
+            function attachClickEvents() {
+                galleryItems.forEach((item, index) => {
+                    // Uklanjamo stare događaje da izbegnemo dupliranje
+                    item.removeEventListener('click', item.clickHandler);
+                    item.clickHandler = () => {
+                        // Pronalazimo indeks slike u filteredImages
+                        const src = item.getAttribute('data-full');
+                        const filteredIndex = filteredImages.findIndex(img => img.src === src);
+                        if (filteredIndex !== -1) {
+                            openModal(filteredIndex);
+                        }
+                    };
+                    item.addEventListener('click', item.clickHandler);
+                });
+            }
+
+            attachClickEvents();
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -789,6 +805,7 @@
 
                     const filter = button.getAttribute('data-filter');
                     filterGallery(filter);
+                    attachClickEvents(); // Osvežavamo klik događaje nakon filtriranja
                 });
             });
 
