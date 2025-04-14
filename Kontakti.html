@@ -134,7 +134,7 @@
         /* Language switcher styles - Pomerene ispod navigacionog bara na desnu stranu */
         .language-switcher {
             display: flex;
- pcijustify-content: flex-end;
+            justify-content: flex-end;
             gap: 10px;
             padding: 10px 20px;
             position: fixed;
@@ -342,6 +342,12 @@
             100% { box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3); }
         }
 
+        @keyframes purpleSmoke {
+            0% { box-shadow: 0 0 20px rgba(167, 139, 250, 0.4), 0 0 40px rgba(124, 58, 237, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(167, 139, 250, 0.6), 0 0 60px rgba(124, 58, 237, 0.3); }
+            100% { box-shadow: 0 0 20px rgba(167, 139, 250, 0.4), 0 0 40px rgba(124, 58, 237, 0.2); }
+        }
+
         /* Video container styles */
         .video-container {
             max-width: 1200px;
@@ -377,10 +383,11 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            max-width: 600px; /* Smanjena maksimalna širina za manji izgled */
+            max-width: 300px; /* Prepolovljena veličina za desktop */
             margin: 0 auto;
             border-radius: 10px;
-            box Núm-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: purpleSmoke 3s infinite ease-in-out;
             overflow: hidden;
             transition: transform 0.3s ease;
         }
@@ -394,6 +401,7 @@
             height: auto;
             display: block;
             border-radius: 10px;
+            object-fit: cover; /* Osigurava potpunu vidljivost bez deformacija */
         }
 
         /* Footer styles */
@@ -609,7 +617,7 @@
             }
 
             .video-wrapper {
-                max-width: 450px; /* Smanjena širina za mobilne uređaje */
+                max-width: 225px; /* Proporcionalno smanjeno za mobilne uređaje */
             }
 
             .footer-container {
@@ -687,7 +695,7 @@
             }
 
             .video-wrapper {
-                max-width: 300px; /* Još manja širina za male ekrane */
+                max-width: 150px; /* Još manja širina za male ekrane */
             }
         }
     </style>
@@ -753,7 +761,7 @@
         <section class="video-container">
             <h2 data-sr="Pogledajte naš rad" data-en="Watch Our Work">Pogledajte naš rad</h2>
             <div class="video-wrapper">
-                <video autoplay muted loop>
+                <video autoplay muted loop playsinline>
                     <source src="vjencanje-video.mp4" type="video/mp4">
                     Vaš pregledač ne podržava video tag.
                 </video>
@@ -766,7 +774,7 @@
             <div class="footer-section">
                 <h3 data-sr="Navigacija" data-en="Navigation">Navigacija</h3>
                 <ul>
-                    <li><a href="index.html" data-sr="Početna" data-en="Home">Počutna</a></li>
+                    <li><a href="index.html" data-sr="Početna" data-en="Home">Početna</a></li>
                     <li><a href="O-nama.html" data-sr="O nama" data-en="About Us">O nama</a></li>
                     <li><a href="Galerija.html" data-sr="Galerija" data-en="Gallery">Galerija</a></li>
                     <li><a href="Kontakti.html" data-sr="Kontakti" data-en="Contacts">Kontakti</a></li>
