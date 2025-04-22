@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -1177,6 +1176,262 @@
     }
 }
 
+  /* Nova sekcija za testimonijale */
+.testimonials-section {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    animation: circleShadow 3s infinite ease-in-out;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 40px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.testimonials-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #a78bfa, transparent);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+    justify-items: center; /* Centrira kartice unutar grida */
+}
+
+.testimonial-card {
+    background: linear-gradient(135deg, #ffffff, #f3e8ff);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    max-width: 350px; /* Ograničava širinu kartice za bolji raspored */
+    width: 100%; /* Osigurava da kartica zauzima prostor unutar grida */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(167, 139, 250, 0.3);
+    background: linear-gradient(135deg, #f3e8ff, #e0d4ff);
+}
+
+.testimonial-card .client-img {
+    width: 95px;
+    height: 80px;
+    border-radius: 10px; /* Adjusted for square with slightly rounded corners */
+    margin: 0 auto 20px;
+    border: 3px solid #a78bfa;
+    object-fit: cover;
+}
+
+.testimonial-card p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.testimonial-card h3 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-family: 'Georgia', serif;
+}
+
+.testimonial-card span {
+    font-size: 16px;
+    color: #a78bfa;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+}
+
+/* Responzivnost za sekciju komentara */
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 20px;
+    }
+
+    .testimonials-section h2 {
+        font-size: 28px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+        max-width: 100%; /* Na manjim ekranima kartica zauzima punu širinu */
+    }
+
+    .testimonial-card .client-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .testimonial-card p {
+        font-size: 16px;
+    }
+
+    .testimonial-card h3 {
+        font-size: 18px;
+    }
+
+    .testimonial-card span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-section h2 {
+        font-size: 24px;
+    }
+
+    .testimonial-card {
+        padding: 15px;
+    }
+
+    .testimonial-card .client-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .testimonial-card p {
+        font-size: 14px;
+    }
+
+    .testimonial-card h3 {
+        font-size: 16px;
+    }
+
+    .testimonial-card span {
+        font-size: 12px;
+    }
+}
+
+
+/* Stil za sekciju partnerstva */
+.partnership-section {
+    padding: 40px 20px; /* Usklađeno sa paddingom ostalih sekcija */
+    max-width: 1400px; /* Maksimalna širina za veće ekrane */
+    margin: 0 auto; /* Centriranje */
+    background: linear-gradient(135deg, #f7f7f7, #e8e8e8); /* Pozadina u stilu main */
+    border-radius: 15px; /* Zaobljeni uglovi, kao kod drugih sekcija */
+    text-align: center; /* Centriranje sadržaja, uključujući h1 */
+}
+
+/* Stil za h1 naslov */
+.partnership-section h1 {
+    font-size: 36px; /* Veličina slična drugim naslovima */
+    color: #222; /* Tamna boja teksta, usklađena sa sajtom */
+    margin-bottom: 30px; /* Razmak između naslova i kontejnera */
+    font-weight: 700; /* Podebljana težina, kao kod drugih naslova */
+    position: relative;
+    padding-bottom: 10px; /* Prostor za podvlačenje */
+}
+
+.partnership-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centriranje linije */
+    width: 60px; /* Širina linije, usklađena sa drugim podvlačenjima */
+    height: 4px; /* Debljina linije */
+    background: linear-gradient(to right, #a78bfa, transparent); /* Ljubičasti gradient, kao u drugim sekcijama */
+}
+
+/* Stil za kontejner slike */
+.partnership-container {
+    width: 1300px; /* Fiksna širina za desktop */
+    height: 650px; /* Fiksna visina za desktop */
+    max-width: 100%; /* Prilagođava se roditeljskom kontejneru */
+    margin: 0 auto; /* Centriranje */
+    overflow: hidden; /* Sprečava prelivanje slike */
+    border-radius: 10px; /* Zaobljeni uglovi, usklađeno sa dizajnom */
+    background-color: #fff; /* Bela pozadina kao fallback */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stil za sliku */
+.partnership-image {
+    width: 100%; /* Popunjava kontejner */
+    height: 100%; /* Popunjava kontejner */
+    object-fit: cover; /* Slika popunjava prostor bez izobličenja */
+    display: block;
+    border-radius: 10px; /* Usklađeno sa kontejnerom */
+}
+
+/* Responzivnost za mobilne uređaje */
+@media (max-width: 768px) {
+    .partnership-section {
+        padding: 20px 15px; /* Smanjen padding za tablete */
+    }
+
+    .partnership-section h1 {
+        font-size: 28px; /* Smanjena veličina za tablete */
+        margin-bottom: 20px; /* Smanjen razmak */
+    }
+
+    .partnership-container {
+        width: 100%; /* Puna širina ekrana */
+        height: auto; /* Visina se prilagođava */
+        aspect-ratio: 1300 / 650; /* Održava proporcije slike */
+        border-radius: 8px; /* Blago smanjeni uglovi */
+    }
+
+    .partnership-image {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .partnership-section {
+        padding: 15px 10px; /* Minimalni padding za male ekrane */
+    }
+
+    .partnership-section h1 {
+        font-size: 24px; /* Smanjena veličina za male ekrane */
+        margin-bottom: 15px; /* Minimalni razmak */
+    }
+
+    .partnership-section h1::after {
+        width: 50px; /* Blago kraća linija za male ekrane */
+        height: 3px; /* Tanja linija */
+    }
+
+    .partnership-container {
+        border-radius: 6px; /* Još manji uglovi za mobilne */
+    }
+}
+
     /* Back to Top Button */
 .back-to-top {
     position: fixed;
@@ -1305,9 +1560,44 @@
                 </div>
             </div>
 
-            <div class="image-container">
+     
+        <div class="image-container">
     <img src="reklama.jpg" alt="Feature Image" class="feature-image">
+
 </div>
+
+
+<div class="testimonials-section">
+    <h2 data-sr="Naši klijenti kažu" data-en="What Our Clients Say">Naši klijenti kažu</h2>
+    <div class="testimonials-grid">
+        <a href="https://esteticanews.me" class="testimonial-card" target="_blank">
+            <img src="estetica.jpg" alt="Klijent 1" class="client-img">
+            <p data-sr="“Rad sa <b>Unique Production</b> timom bio je istinsko zadovoljstvo. Potpuno su preuzeli organizaciju našeg eventa povodom lansiranja portala i svaki segment – od koncepta do realizacije – izveden je vrhunski. <b>Unique tim</b> je produkcija kojoj s povjerenjem prepuštamo i sve buduće projekte.”
+" data-en="“Working with the <b>Unique Production</b> team was an absolute pleasure. They handled every aspect of our portal launch event with excellence – from concept to execution. <b>Unique is a team</b> we fully trust and will continue to work with on all future projects.”">“Rad sa <b>Unique Production</b> timom bio je istinsko zadovoljstvo. Potpuno su preuzeli organizaciju našeg eventa povodom lansiranja portala i svaki segment – od koncepta do realizacije – izveden je vrhunski. <b>Unique tim</b> je produkcija kojoj s povjerenjem prepuštamo i sve buduće projekte.”
+</p>
+            <h3 data-sr="Estetica News" data-en="Estetica News">Estetica News</h3>
+            <span data-sr="www.esteticanews.me" data-en="www.esteticanews.me">www.esteticanews.me</span>
+        </a>
+        <a href="https://www.petitegeneve.com/ww-en/rolex/watches" class="testimonial-card" target="_blank">
+            <img src="kod_io_logo.jpg" alt="Klijent 2" class="client-img">
+            <p data-sr="Neverovatno posvećen tim! Sve je bilo besprekorno organizovano, od početka do kraja." data-en="Incredibly dedicated team! Everything was flawlessly organized from start to finish.">Neverovatno posvećen tim! Sve je bilo besprekorno organizovano, od početka do kraja.</p>
+            <h3 data-sr="Ana Jovanović" data-en="Ana Jovanović">Ana Jovanović</h3>
+            <span data-sr="Marketing Menadžer, Creative Agency" data-en="Marketing Manager, Creative Agency">Marketing Menadžer, Creative Agency</span>
+        </a>
+        <a href="https://example.com/client3" class="testimonial-card" target="_blank">
+            <img src="jaksic.jpg" alt="Klijent 3" class="client-img">
+            <p data-sr="Velika čast mi je bila sarađivati sa Unique Production na čelu sa Vericom Čuljković, koja je uvijek nasmijana, puna energije i moram reći – brutalni perfekcionista! Predstavljanje mog automobila za novu trkačku sezonu u vinariji Storia di Pietra bio je projekat koji bi bez problema stao rame uz rame sa bilo kojim iz svijeta Formule 1. Moju ideju i zamisao Verica je zahvaljujući njenom trudu, profesionalizmu i izuzetnoj muzičkoj nadarenosti sa lakoćom pretvorila u stvarnost – bilo je magično.
+" data-en="It was a great honor to collaborate with Unique Production, led by Verica Čuljković, who is always smiling, full of energy — and I must say, an absolute perfectionist! The presentation of my car for the new racing season at the Storia di Pietra winery was a project that could easily stand shoulder to shoulder with any from the Formula 1 world. My idea and vision were effortlessly brought to life by Verica, thanks to her dedication, professionalism, and exceptional musical talent — it was magical.
+">Velika čast mi je bila sarađivati sa Unique Production na čelu sa Vericom Čuljković, koja je uvijek nasmijana, puna energije i moram reći – brutalni perfekcionista! Predstavljanje mog automobila za novu trkačku sezonu u vinariji Storia di Pietra bio je projekat koji bi bez problema stao rame uz rame sa bilo kojim iz svijeta Formule 1. Moju ideju i zamisao Verica je zahvaljujući njenom trudu, profesionalizmu i izuzetnoj muzičkoj nadarenosti sa lakoćom pretvorila u stvarnost – bilo je magično. 
+</p>
+            <h3 data-sr="Vasilije Jakšić" data-en="Vasilije Jakšić">Vasilije Jakšić</h3>
+            <span data-sr="European Motorsport Champion 2022." data-en="European Motorsport Champion 2022.">European Motorsport Champion 2022.</span>
+        </a>
+    </div>
+</div>
+
+   
+
 
             <div class="section">
                 <h2 data-sr="Pogledajte našu galeriju" data-en="View Our Gallery">Pogledajte našu galeriju</h2>
@@ -1330,6 +1620,18 @@
                     </a>
                 </div>
             </div>
+
+         <main>
+    <div class="home-container">
+        <!-- Ostale sekcije -->
+        <section class="partnership-section">
+            <h1>saradnje na koje smo ponosni</h1>
+            <div class="partnership-container">
+                <img src="partnerstva.jpg" alt="Partnerstvo slika" class="partnership-image">
+            </div>
+        </section>
+    </div>
+</main>
 
             <div class="custom-container">
     <div class="image-placeholder">
