@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-sr="Kontakti - UNIQUE" data-en="Contacts - UNIQUE">Kontakti - UNIQUE</title>
+    <title data-sr="Kontakti - UNICQUE" data-en="Contacts - UNICQUE">Kontakti - UNICQUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Osnovni reset stila za sve elemente */
@@ -616,49 +616,6 @@
                 font-size: 16px;
             }
         }
-      
-    /* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: rgba(128, 128, 128, 0.3); /* Transparent gray */
-    border: 2px solid #a78bfa; /* Purple border */
-    border-radius: 50%; /* Circular shape */
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-    z-index: 1000;
-}
-
-.back-to-top i {
-    color: #a78bfa; /* Purple arrow */
-    font-size: 20px;
-}
-
-.back-to-top:hover {
-    background-color: rgba(128, 128, 128, 0.5); /* Slightly darker gray on hover */
-    transform: scale(1.1); /* Subtle zoom effect */
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Ensure button is accessible and focusable */
-.back-to-top:focus {
-    outline: 2px solid #a78bfa;
-    outline-offset: 2px;
-}
-
-
     </style>
 </head>
 <body>
@@ -681,7 +638,7 @@
                     <a href="#usluge" data-sr="Usluge" data-en="Services">Usluge</a>
                     <div class="dropdown-content">
                         <a href="Muzicki-performansi.html" data-sr="Muzički performansi" data-en="Musical Performances">Muzički performansi</a>
-                        <a href="Scenski-art-performansi.html" data-sr="Scenski Art performansi" data-en="Stage Art Performances">Scenski Art performansi</a>
+                        <a href="Scenski-art-performansi.html" data-sr="Scenski art performansi" data-en="Stage Art Performances">Scenski art performansi</a>
                         <a href="Specijalni-efekti-tehnicka-produkcija.html" data-sr="Specijalni efekti & Tehnička produkcija" data-en="Special Effects & Technical Production">Specijalni efekti & Tehnička produkcija</a>
                         <a href="Ostale-usluge.html" data-sr="Ostale usluge" data-en="Other Services">Ostale usluge</a>
                     </div>
@@ -703,7 +660,7 @@
                 <p data-sr="Želimo da čujemo od vas! Bilo da planirate događaj ili imate pitanje o našim nastupima, slobodno nam se obratite putem telefona, e-maila ili forme pored." data-en="We’d love to hear from you! Whether you’re planning an event or have a question about our performances, feel free to reach out via phone, email, or the form beside.">Želimo da čujemo od vas! Bilo da planirate događaj ili imate pitanje o našim nastupima, slobodno nam se obratite putem telefona, e-maila ili forme pored.</p>
                 <ul class="contact-details">
                     <li><i class="fas fa-phone"></i><a href="tel:+38268256063" data-sr="+382 68 256 063" data-en="+382 68 256 063">+382 68 256 063</a></li>
-                    <li><a href="mailto:info@uniqueproduction.me" data-sr="info@uniqueproduction.me" data-en="info@uniqueproduction.me">info@uniqueproduction.me</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:info@unique.me" data-sr="info@unique.me" data-en="info@unique.me">info@unique.me</a></li>
                     <li><i class="fas fa-map-marker-alt"></i><span data-sr="Podgorica, Crna Gora" data-en="Podgorica, Montenegro">Podgorica, Crna Gora</span></li>
                 </ul>
             </div>
@@ -719,11 +676,6 @@
                 </form>
             </div>
         </div>
-
-<button class="back-to-top" aria-label="Back to Top">
-    <i class="fas fa-arrow-up"></i>
-</button>
-
     </main>
 
     <footer>
@@ -808,29 +760,6 @@
                 });
             });
         });
-
-// Back to Top Button Functionality
-const backToTopButton = document.querySelector('.back-to-top');
-
-if (backToTopButton) {
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    });
-
-    // Smooth scroll to top on click
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
     </script>
 </body>
 </html>
