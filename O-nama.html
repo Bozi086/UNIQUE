@@ -3,991 +3,522 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-sr="O nama - UNIQUE" data-en="About Us - UNIQUE">O nama - UNIQUE</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title data-sr="O nama - GOODFOOD" data-en="About Us - GOODFOOD">O nama - GOODFOOD</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Prilagođeni CSS -->
     <style>
-    /* Osnovni reset stila za sve elemente */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        /* Osiguravanje da futer bude na dnu stranice */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
 
-    /* Stil za telo stranice (body) */
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f7f7f7;
-        color: #333;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-    }
-
-    /* Stil za navigacioni bar */
-    .navbar {
-        background-color: #000;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .logo {
-            margin-left: 5px;
+        /* Prilagođavanje navigacionog bara */
+        .navbar {
+            background-color: #f28c38;
+            transition: transform 0.3s ease;
+        }
+        .navbar.hidden {
+            transform: translateY(-100%);
+        }
+        .navbar-brand {
             display: flex;
             align-items: center;
         }
-
-        .logo img {
+        .navbar-brand img {
             height: 50px;
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-            border-radius: 18px;
-            border: 3px solid #a78bfa;
+            margin-right: 10px;
+            border-radius: 11px;
+        }
+        .navbar-brand span {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #e63946 !important;
         }
 
-        .logo img:hover {
-            transform: scale(1.15);
+        /* Prilagođavanje hamburger ikone */
+        .navbar-toggler {
+            border: none;
+            outline: none;
         }
-
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        margin-right: 15px;
-    }
-
-    .hamburger span {
-        width: 30px;
-        height: 3px;
-        background-color: #fff;
-        margin: 3px 0;
-        transition: all 0.3s ease;
-    }
-
-    .nav-links {
-        list-style: none;
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-links li {
-        margin: 0 20px;
-        position: relative;
-    }
-
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        color: #a78bfa;
-    }
-
-    .dropdown {
-        position: relative;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #000;
-        min-width: 160px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        z-index: 1;
-        top: 100%;
-        left: 0;
-    }
-
-    .dropdown-content a {
-        color: #fff;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-size: 16px;
-    }
-
-    .dropdown-content a:hover {
-        color: #a78bfa;
-        background-color: #1a1a1a;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    /* Language switcher styles - Pomerene ispod navigacionog bara na desnu stranu */
-    .language-switcher {
-        display: flex;
-        justify-content: flex-end; /* Postavlja zastavice na desnu stranu */
-        gap: 10px;
-        padding: 10px 20px; /* Dodaje razmak sa desne strane i odozgo/odozdo */
-        position: fixed;
-        top: 85px; /* Spušteno za 25px u odnosu na prethodnih 60px */
-        right: 0; /* Poravnanje uz desnu ivicu */
-        z-index: 999; /* Malo niži z-index od navbar-a */
-    }
-
-    .language-flag {
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-        border: 2px solid #a78bfa;
-        border-radius: 3px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .language-flag:hover {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
-
-    .language-flag.active {
-        border-color: #7c3aed;
-        opacity: 1;
-    }
-
-    /* Stil za hero sekciju */
-    .hero {
-        position: relative;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #fff;
-        padding: 20px;
-        overflow: hidden;
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
-
-    .hero video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-        font-weight: 700;
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-        animation: fadeInDown 1s ease;
-    }
-
-    .hero .subtitle {
-        font-family: 'Georgia', serif;
-        font-style: italic;
-        font-size: 28px;
-        margin-bottom: 30px;
-        animation: fadeInUp 1s ease 0.5s backwards;
-    }
-
-    .hero .highlight {
-        color: #a78bfa;
-        font-weight: 600;
-    }
-
-    .hero .cta-button {
-        background: linear-gradient(45deg, #a78bfa, #7c3aed);
-        color: #fff;
-        padding: 16px 40px;
-        border: none;
-        border-radius: 50px;
-        font-size: 18px;
-        font-weight: 600;
-        text-decoration: none;
-        animation: pulseShadow 1.5s infinite;
-        transition: transform 0.3s ease;
-    }
-
-    .hero .cta-button:hover {
-        transform: translateY(-3px);
-    }
-
-    /* Animacija za fadeInDown efekat */
-    @keyframes fadeInDown {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Animacija za fadeInUp efekat */
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Main content styles */
-    main {
-        padding: 120px 20px 60px;
-        max-width: 1200px;
-        margin: 0 auto;
-        background: linear-gradient(135deg, #f7f7f7 0%, #e8e8e8 100%);
-        border-radius: 15px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-    }
-
-    .intro-section {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    .intro-section h1 {
-        font-size: 40px;
-        color: #222;
-        margin-bottom: 15px;
-        font-weight: 700;
-        position: relative;
-        padding-bottom: 10px;
-        letter-spacing: 1px;
-    }
-
-    .intro-section h1::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 4px;
-        background: linear-gradient(to right, #a78bfa, transparent);
-    }
-
-    .intro-section .subtitle {
-        font-family: 'Georgia', serif;
-        font-style: italic;
-        font-size: 24px;
-        color: #555;
-        margin: 20px 0;
-        max-width: 800px;
-        display: inline-block;
-    }
-
-    .intro-section .highlight {
-        color: #a78bfa;
-        font-weight: 600;
-    }
-
-    .about-container {
-        padding: 40px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-
-    .section {
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .section-1, .section-2, .section-3, .section-4 {
-        min-height: 300px;
-    }
-
-    .section h3 {
-        font-size: 24px;
-        color: #a78bfa;
-        font-weight: 600;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .section p {
-        font-size: 18px;
-        line-height: 1.8;
-        color: #666;
-        text-align: justify;
-    }
-
-    .section .highlight {
-        color: #a78bfa;
-        font-weight: 600;
-    }
-
-    .section-2 {
-        animation: pulseGlow 2s infinite;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 300px;
-    }
-
-    .section-2 .quote {
-        font-family: 'Georgia', serif;
-        font-style: italic;
-        font-size: 24px;
-        color: #555;
-        text-align: center;
-        padding: 20px 0;
-        max-width: 90%;
-    }
-
-    .section-2 .quote-author {
-        font-family: 'Arial', sans-serif;
-        font-size: 20px;
-        color: #a78bfa;
-        font-weight: 600;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    @keyframes pulseGlow {
-        0% {
-            box-shadow: 0 5px 15px rgba(167, 139, 250, 0.3);
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
         }
-        50% {
-            box-shadow: 0 10px 25px rgba(167, 139, 250, 0.5);
+        .navbar-toggler-icon {
+            background-image: none;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            display: inline-block;
         }
-        100% {
-            box-shadow: 0 5px 15px rgba(167, 139, 250, 0.3);
-        }
-    }
-
-    .section-3 {
-        background-color: #ddd;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: none;
-        overflow: hidden;
-        height: auto;
-    }
-
-    .section-3 img {
-        max-width: 500px;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .section-4 {
-        border: 3px solid #a78bfa;
-        position: relative;
-        height: auto;
-    }
-
-    .services-card {
-        grid-column: 1 / -1;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        padding: 20px;
-        margin: 0 auto 20px;
-        max-width: 500px;
-        text-align: center;
-        border: 2px solid #a78bfa;
-    }
-
-    .services-card h3 {
-        font-size: 24px;
-        color: #a78bfa;
-        font-weight: 600;
-        margin-bottom: 15px;
-    }
-
-    .services-card .services-list {
-        list-style: none;
-    }
-
-    .services-card .services-list li {
-        font-size: 18px;
-        color: #666;
-        margin: 10px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .services-card .services-list li i {
-        color: #a78bfa;
-        margin-right: 10px;
-        font-size: 20px;
-    }
-
-    .cta-section {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 20px 0;
-    }
-
-    .cta-button {
-        background: linear-gradient(45deg, #a78bfa, #7c3aed);
-        color: #fff;
-        padding: 16px 40px;
-        border: none;
-        border-radius: 50px;
-        font-size: 18px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        animation: pulseShadow 1.5s infinite;
-        display: inline-block;
-        text-decoration: none;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px);
-    }
-
-    @keyframes pulseShadow {
-        0% {
-            box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3);
-        }
-        50% {
-            box-shadow: 0 15px 40px rgba(167, 139, 250, 0.7);
-        }
-        100% {
-            box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3);
-        }
-    }
-
-    footer {
-        background-color: #000;
-        color: #fff;
-        padding: 40px 20px 20px;
-        margin-top: auto;
-        position: relative;
-    }
-
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .footer-section {
-        flex: 1;
-        min-width: 200px;
-    }
-
-    .footer-section h3 {
-        color: #fff;
-        margin-bottom: 15px;
-        font-size: 20px;
-        position: relative;
-        padding-bottom: 5px;
-    }
-
-    .footer-section h3::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 30px;
-        height: 2px;
-        background-color: #a78bfa;
-    }
-
-    .footer-section ul {
-        list-style: none;
-    }
-
-    .footer-section ul li {
-        margin: 12px 0;
-        position: relative;
-    }
-
-    .footer-section a {
-        color: #fff;
-        text-decoration: none;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .footer-section a:hover {
-        color: #a78bfa;
-        transform: translateX(5px);
-    }
-
-    .footer-dropdown .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #000;
-        min-width: 160px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        z-index: 1;
-        left: 100%;
-        top: 0;
-    }
-
-    .footer-dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .social-links {
-        margin-top: 15px;
-    }
-
-    .social-links a {
-        margin: 0 15px 0 0;
-        font-size: 28px;
-        color: #fff;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .social-links a:hover {
-        color: #a78bfa;
-        transform: scale(1.2);
-    }
-
-    .footer-credit {
-        text-align: center;
-        margin-top: 30px;
-        font-size: 14px;
-        color: #ccc;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-credit a {
-        color: #fff;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .footer-credit a:hover {
-        color: #a78bfa;
-        transform: none;
-    }
-
-    /* Mobilna optimizacija */
-    @media (max-width: 768px) {
-        .hamburger {
-            display: flex;
-        }
-
-        .nav-links {
-            display: none;
-            flex-direction: column;
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after,
+        .navbar-toggler-icon span {
+            content: '';
             position: absolute;
-            top: 60px;
-            left: 0;
-            background-color: #000;
             width: 100%;
-            padding: 20px;
+            height: 3px;
+            background-color: #e63946;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-toggler-icon::before {
+            top: 5px;
+        }
+        .navbar-toggler-icon span {
+            top: 13px;
+        }
+        .navbar-toggler-icon::after {
+            top: 21px;
+        }
+
+        /* Prilagođavanje futera */
+        .footer {
+            background-color: #e63946;
+            color: #ffffff;
+            padding: 40px 0;
+        }
+        .footer h5 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #ffb07c;
+        }
+        .footer .follow-us {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer .follow-us h5 {
+            margin-left: 30px;
+        }
+        .footer .social-icons {
+            margin-left: 30px;
+        }
+        .footer .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+        .footer .contact-info p {
+            margin-bottom: 5px;
+        }
+        .footer .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Stilovi za O nama sekciju */
+        .about-section {
+            padding: 60px 0;
+        }
+        .about-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f28c38;
+            margin-bottom: 20px;
             text-align: center;
         }
-
-        .nav-links.active {
-            display: flex;
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 20px;
         }
-
-        .nav-links li {
-            margin: 15px 0;
+        .team-section {
+            margin-top: 40px;
         }
-
-        .nav-links a {
-            font-size: 20px;
+        .team-section h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #f28c38;
+            margin-bottom: 30px;
+            text-align: center;
         }
-
-        .dropdown-content {
-            position: static;
-            box-shadow: none;
-            background-color: #1a1a1a;
-            width: 100%;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .logo {
-            margin-left: 5px;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            margin: 5px;
-        }
-
-        .navbar {
-            padding: 10px;
-            min-height: 60px;
-        }
-
-        .hamburger {
-            margin-right: 10px;
-        }
-
-        .language-switcher {
-            top: 85px; /* Prilagođeno za mobilne uređaje, spušteno za 25px */
-            padding: 8px 15px; /* Smanjen padding za manje ekrane */
-        }
-
-        main {
-            padding: 80px 15px 40px;
-        }
-
-        .intro-section h1 {
-            font-size: 32px;
-        }
-
-        .intro-section .subtitle {
-            font-size: 20px;
-        }
-
-        .about-container {
+        .team-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            background-color: #fff;
         }
-
-        .section h3 {
-            font-size: 20px;
+        .team-card:hover {
+            transform: translateY(-5px);
         }
-
-        .section p,
-        .services-card .services-list li {
-            font-size: 16px;
-        }
-
-        .section-2 .quote {
-            font-size: 20px;
-            padding: 15px 0;
-        }
-
-        .section-2 .quote-author {
-            font-size: 18px;
-        }
-
-        .section-3 {
-            height: 400px;
-            order: 2;
-        }
-
-        .section-3 img {
-            max-width: 100%;
-            max-height: 400px;
-        }
-
-        .section-4 {
-            order: 3;
-        }
-
-        .services-card {
-            order: 4;
+        .team-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
             margin-bottom: 15px;
         }
-
-        .cta-section {
-            order: 5;
+        .team-card h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .team-card p {
+            font-size: 1rem;
+            color: #e63946;
+            font-weight: 500;
+            margin-bottom: 0;
         }
 
-        .footer-container {
-            flex-direction: column;
-            text-align: center;
-            padding: 0 15px;
-        }
-
-        .footer-section h3::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-        }
-
-        .social-links a {
-            margin: 0 15px;
-            font-size: 24px;
-        }
-
-        .footer-dropdown .dropdown-content {
-            position: static;
-            box-shadow: none;
-            background-color: #1a1a1a;
-            width: 100%;
-            left: 0;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .logo img {
-            height: 40px;
-            width: auto;
-            margin: 5px;
-        }
-
-        .navbar {
-            padding: 8px;
-            min-height: 50px;
-        }
-
-        .nav-links {
-            top: 50px;
-        }
-
+        /* Language switcher styles */
         .language-switcher {
-            top: 75px; /* Prilagođeno za manji navbar na malim ekranima, spušteno za 25px (50px + 25px) */
-            padding: 6px 10px; /* Još manji padding za male ekrane */
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 10px 20px;
+            position: fixed;
+            top: 85px;
+            right: 0;
+            z-index: 999;
         }
-
         .language-flag {
-            width: 25px;
-            height: 15px;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            border: 2px solid #f28c38;
+            border-radius: 3px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .language-flag:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        .language-flag.active {
+            border-color: #e63946;
+            opacity: 1;
         }
 
-        .intro-section h1 {
-            font-size: 28px;
+        /* Responsive prilagođavanja za mobilne i tablet uređaje */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                text-align: center;
+                padding: 10px 0;
+            }
+            .navbar-nav .nav-item {
+                margin: 5px 0;
+            }
+            .navbar-collapse {
+                background-color: #f28c38;
+                padding: 10px;
+                border-radius: 5px;
+            }
         }
 
-        .intro-section .subtitle {
-            font-size: 18px;
+        @media (max-width: 767px) {
+            .about-section h2 {
+                font-size: 2rem;
+            }
+            .about-section p {
+                font-size: 1rem;
+            }
+            .team-section h3 {
+                font-size: 1.8rem;
+            }
+            .team-card {
+                margin-bottom: 20px;
+            }
+            .footer .container {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .footer .row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .footer .row > div {
+                max-width: 90%;
+                width: 300px;
+                margin-bottom: 20px;
+            }
+            .footer h5 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+            .footer ul.list-unstyled li {
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+            .footer .follow-us {
+                align-items: center;
+            }
+            .footer .follow-us h5 {
+                margin-left: 0;
+            }
+            .footer .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-left: 0;
+            }
+            .footer .social-icons a {
+                font-size: 1.4rem;
+            }
+            .footer .contact-info p {
+                font-size: 1rem;
+            }
+            .footer .copyright {
+                font-size: 0.9rem;
+            }
+            .language-switcher {
+                top: 75px;
+                padding: 8px 15px;
+            }
         }
 
-        .about-container {
-            padding: 15px;
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                height: 30px;
+                max-width: 100%;
+            }
+            .navbar-brand span {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+            .about-section {
+                padding: 40px 0;
+            }
+            .about-section h2 {
+                font-size: 1.8rem;
+            }
+            .about-section p {
+                font-size: 0.95rem;
+            }
+            .team-section h3 {
+                font-size: 1.5rem;
+            }
+            .team-card img {
+                width: 120px;
+                height: 120px;
+            }
+            .team-card h4 {
+                font-size: 1.3rem;
+            }
+            .team-card p {
+                font-size: 0.9rem;
+            }
+            .footer {
+                padding: 20px 0;
+            }
+            .footer .row > div {
+                width: 250px;
+                margin-bottom: 15px;
+            }
+            .footer h5 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+            .footer ul.list-unstyled li {
+                margin-bottom: 4px;
+                font-size: 0.95rem;
+            }
+            .footer .social-icons {
+                gap: 8px;
+            }
+            .footer .social-icons a {
+                font-size: 1.3rem;
+            }
+            .footer .contact-info p {
+                font-size: 0.95rem;
+            }
+            .footer .copyright {
+                font-size: 0.85rem;
+            }
+            .language-switcher {
+                top: 65px;
+                padding: 6px 10px;
+            }
+            .language-flag {
+                width: 25px;
+                height: 15px;
+            }
         }
-
-        .section-2 .quote {
-            font-size: 18px;
-        }
-
-        .section-2 .quote-author {
-            font-size: 16px;
-        }
-
-        .services-card h3 {
-            font-size: 20px;
-        }
-
-        .services-card .services-list li {
-            font-size: 14px;
-        }
-
-        .cta-button {
-            padding: 14px 30px;
-            font-size: 16px;
-        }
-
-        .section-3 {
-            height: 350px;
-        }
-
-        .section-3 img {
-            max-height: 350px;
-        }
-    }
-      
-     /* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: rgba(128, 128, 128, 0.3); /* Transparent gray */
-    border: 2px solid #a78bfa; /* Purple border */
-    border-radius: 50%; /* Circular shape */
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-    z-index: 1000;
-}
-
-.back-to-top i {
-    color: #a78bfa; /* Purple arrow */
-    font-size: 20px;
-}
-
-.back-to-top:hover {
-    background-color: rgba(128, 128, 128, 0.5); /* Slightly darker gray on hover */
-    transform: scale(1.1); /* Subtle zoom effect */
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Ensure button is accessible and focusable */
-.back-to-top:focus {
-    outline: 2px solid #a78bfa;
-    outline-offset: 2px;
-}
-
-
-
-</style>
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logo1.jpg" alt="logo Uniqueproduction">
-                </a>
+    <!-- Navigacioni bar -->
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Navigacija">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo1.png" alt="goodfood-mne Logo" />
+                <span data-sr="GOODFOOD" data-en="GOODFOOD">GOODFOOD</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Otvori navigacioni meni">
+                <span class="navbar-toggler-icon"><span></span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-sr="Početna" data-en="Home">Početna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="o-nama.html" data-sr="O nama" data-en="About Us">O nama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proizvodi.html" data-sr="Proizvodi" data-en="Products">Proizvodi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galerija.html" data-sr="Galerija" data-en="Gallery">Galerija</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontakti.html" data-sr="Kontakti" data-en="Contacts">Kontakti</a>
+                    </li>
+                </ul>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" data-sr="Početna" data-en="Home">Početna</a></li>
-                <li><a href="O-nama.html" data-sr="O nama" data-en="About Us">O nama</a></li>
-                <li class="dropdown">
-                    <a href="#usluge" data-sr="Usluge" data-en="Services">Usluge</a>
-                    <div class="dropdown-content">
-                        <a href="Muzicki-performansi.html" data-sr="Muzički performansi" data-en="Musical Performances">Muzički performansi</a>
-                        <a href="Scenski-art-performansi.html" data-sr="Scenski Art performansi" data-en="Stage Art Performances">Scenski Art performansi</a>
-                        <a href="Specijalni-efekti-tehnicka-produkcija.html" data-sr="Specijalni efekti & Tehnička produkcija" data-en="Special Effects & Technical Production">Specijalni efekti & Tehnička produkcija</a>
-                        <a href="Ostale-usluge.html" data-sr="Ostale usluge" data-en="Other Services">Ostale usluge</a>
+        </div>
+    </nav>
+    <div class="language-switcher">
+        <img src="srpski.png" alt="Srpski" class="language-flag active" data-lang="sr">
+        <img src="engleski.png" alt="English" class="language-flag" data-lang="en">
+    </div>
+
+    <!-- Sadržaj stranice -->
+    <main class="container my-5">
+        <section class="about-section">
+            <h2 data-sr="O nama" data-en="About Us">O nama</h2>
+            <p data-sr="Osnovani 2013. godine u srcu Crne Gore, u mjestu Kosić bb, Danilovgrad, GOOD FOOD DOO je kompanija posvećena kvalitetu i inovacijama. Prema podacima iz Centralnog registra privrednih subjekata (CRPS), naša osnovna djelatnost je nespecijalizovana trgovina na veliko (4690), dok je naša glavna misija proizvodnja vrhunskih jaja, uz dodatni fokus na građevinski sektor kao sporednu djelatnost." data-en="Founded in 2013 in the heart of Montenegro, in Kosić bb, Danilovgrad, GOOD FOOD DOO is a company dedicated to quality and innovation. According to the Central Registry of Business Entities (CRPS), our primary activity is non-specialized wholesale trade (4690), while our main mission is the production of high-quality eggs, with an additional focus on the construction sector as a secondary activity.">Osnovani 2013. godine u srcu Crne Gore, u mjestu Kosić bb, Danilovgrad, GOOD FOOD DOO je kompanija posvećena kvalitetu i inovacijama. Prema podacima iz Centralnog registra privrednih subjekata (CRPS), naša osnovna djelatnost je nespecijalizovana trgovina na veliko (4690), dok je naša glavna misija proizvodnja vrhunskih jaja, uz dodatni fokus na građevinski sektor kao sporednu djelatnost.</p>
+            <p data-sr="Pod vođstvom osnivača Predraga Kovačevića i direktorice Marije Kaluđerović, GOOD FOOD DOO gradi reputaciju na temeljima kvaliteta, pouzdanosti i posvećenosti. Naša vizija je jednostavna: nudimo samo najbolje, uz stalni fokus na unapređenje kvaliteta naših proizvoda i usluga." data-en="Led by founder Predrag Kovačević and director Marija Kaluđerović, GOOD FOOD DOO builds its reputation on the foundations of quality, reliability, and dedication. Our vision is simple: we offer only the best, with a constant focus on improving the quality of our products and services.">Pod vođstvom osnivača Predraga Kovačevića i direktorice Marije Kaluđerović, GOOD FOOD DOO gradi reputaciju na temeljima kvaliteta, pouzdanosti i posvećenosti. Naša vizija je jednostavna: nudimo samo najbolje, uz stalni fokus na unapređenje kvaliteta naših proizvoda i usluga.</p>
+            <p data-sr="Sa strašću za izvrsnošću, GOOD FOOD DOO nastavlja da raste, širi svoje poslovanje i doprinosi zajednici, zadržavajući visoke standarde koji nas izdvajaju. Pridružite nam se na putu ka još većim uspjesima!" data-en="With a passion for excellence, GOOD FOOD DOO continues to grow, expand its operations, and contribute to the community, maintaining the high standards that set us apart. Join us on the path to even greater success!">Sa strašću za izvrsnošću, GOOD FOOD DOO nastavlja da raste, širi svoje poslovanje i doprinosi zajednici, zadržavajući visoke standarde koji nas izdvajaju. Pridružite nam se na putu ka još većim uspjesima!</p>
+        </section>
+        <section class="team-section">
+            <h3 data-sr="Naš tim" data-en="Our Team">Naš tim</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="team-card">
+                        <img src="placeholder.jpg" alt="Predrag Kovačević">
+                        <h4 data-sr="Predrag Kovačević" data-en="Predrag Kovačević">Predrag Kovačević</h4>
+                        <p data-sr="Osnivač" data-en="Founder">Osnivač</p>
                     </div>
-                </li>
-                <li><a href="Galerija.html" data-sr="Galerija" data-en="Gallery">Galerija</a></li>
-                <li><a href="Kontakti.html" data-sr="Kontakti" data-en="Contacts">Kontakti</a></li>
-            </ul>
-        </nav>
-        <div class="language-switcher">
-            <img src="srpski.png" alt="Srpski" class="language-flag active" data-lang="sr">
-            <img src="engleski.png" alt="English" class="language-flag" data-lang="en">
-        </div>
-    </header>
-
-    <main>
-        <div class="intro-section">
-            <h1 data-sr="O nama" data-en="About Us">O nama</h1>
-            <p class="subtitle" data-sr="Svaki događaj može biti poseban. Na nama je da ga učinimo <span class='highlight'>UNIQUE</span>." data-en="Every event can be special. It’s up to us to make it <span class='highlight'>UNIQUE</span>.">Svaki događaj može biti poseban. Na nama je da ga učinimo <span class="highlight">UNIQUE</span>.</p>
-        </div>
-        <div class="about-container">
-            <div class="section section-1">
-                <h3 data-sr="<span class='highlight'>Unique Production</span>" data-en="<span class='highlight'>Unique Production</span>"><span class="highlight">Unique Production</span></h3>
-                <p data-sr="Dobrodošli u <span class='highlight'>Unique Production</span>, produkcijsku agenciju specijalizovanu za muzičke performanse, umjetničke spektakle i organizaciju događaja. Mi spajamo kreativnost i visoki profesionalizam kako bismo kreirali nezaboravne evente – od luksuznih gala večeri i privatnih proslava, do velikih scenskih produkcija i korporativnih događaja." data-en="Welcome to <span class='highlight'>Unique Production</span>, a production agency specializing in musical performances, artistic spectacles, and event organization. We blend creativity and high professionalism to create unforgettable events – from luxurious gala dinners and private celebrations to large-scale stage productions and corporate events.">Dobrodošli u <span class="highlight">Unique Production</span>, produkcijsku agenciju specijalizovanu za muzičke performanse, umjetničke spektakle i organizaciju događaja. Mi spajamo kreativnost i visoki profesionalizam kako bismo kreirali nezaboravne evente – od luksuznih gala večeri i privatnih proslava, do velikih scenskih produkcija i korporativnih događaja.</p>
-                <p data-sr="<b>Bilo da je riječ o svečanim gala večerima, muzičko-umjetničkim festivalima, luksuznim privatnim događajima ili korporativnim proslavama, <span class='highlight'>Unique Production</span> donosi vrhunski umjetnički i produkcijski standard, prilagođen svakom klijentu</b>." data-en="<b>Whether it’s formal gala dinners, music and art festivals, luxurious private events, or corporate celebrations, <span class='highlight'>Unique Production</span> delivers top-tier artistic and production standards tailored to each client</b>."><b>Bilo da je riječ o svečanim gala večerima, muzičko-umjetničkim festivalima, luksuznim privatnim događajima ili korporativnim proslavama, <span class="highlight">Unique Production</span> donosi vrhunski umjetnički i produkcijski standard, prilagođen svakom klijentu</b>.</p>
-            </div>
-            <div class="section section-2">
-                <p class="quote" data-sr="“Moja misija je stvaranje <span class='highlight'>UNIQUE</span> koncepata i kreativnih rješenja koja svaki događaj pretvaraju u autentično iskustvo. Umjetnost, muzika i emocija su srž svakog momenta koji kreiram.”" data-en="“My mission is to create <span class='highlight'>UNIQUE</span> concepts and creative solutions that transform every event into an authentic experience. Art, music, and emotion are the core of every moment I create.”">“Moja misija je stvaranje <span class="highlight">UNIQUE</span> koncepata i kreativnih rješenja koja svaki događaj pretvaraju u autentično iskustvo. Umjetnost, muzika i emocija su srž svakog momenta koji kreiram.”</p>
-                <p class="quote-author" data-sr="– Verica Čuljković" data-en="– Verica Čuljković">– Verica Čuljković</p>
-            </div>
-            <div class="section section-3">
-                <img src="verica-culjkovic.jpg" alt="Verica Čuljković">
-            </div>
-            <div class="section section-4">
-                <p data-sr="Produkcijsku kuću <span class='highlight'>Unique Production</span> vodi <b>Verica Čuljković</b>, violinistkinja i art producent sa preko 15 godina iskustva u muzičkoj i event industriji." data-en="The production house <span class='highlight'>Unique Production</span> is led by <b>Verica Čuljković</b>, a violinist and art producer with over 15 years of experience in the music and event industry.">Produkcijsku kuću <span class="highlight">Unique Production</span> vodi <b>Verica Čuljković</b>, violinistkinja i art producent sa preko 15 godina iskustva u muzičkoj i event industriji.</p>
-                <p data-sr="Sa više od 15 godina iskustva, u producentskom timu nekih od najprestižnijih događaja, sarađujući s vodećim svjetskim produkcijama u event, wedding i art industriji, od luksuznih vjenčanja i gala večeri do ekskluzivnih korporativnih događaja, moj cilj je nastaviti sa realizacijom i stvaranjem projekata koji oblikuju nezaboravne trenutke." data-en="With over 15 years of experience in the production teams of some of the most prestigious events, collaborating with leading global productions in the event, wedding, and art industries—from luxurious weddings and gala dinners to exclusive corporate events—my goal is to continue realizing and creating projects that shape unforgettable moments.">Sa više od 15 godina iskustva, u producentskom timu nekih od najprestižnijih događaja, sarađujući s vodećim svjetskim produkcijama u event, wedding i art industriji, od luksuznih vjenčanja i gala večeri do ekskluzivnih korporativnih događaja, moj cilj je nastaviti sa realizacijom i stvaranjem projekata koji oblikuju nezaboravne trenutke.</p>
-                <p data-sr="Iza tima koji danas čini <span class='highlight'>Unique Production</span> su godine uspješnih saradnji sa najvećim resortima, kompanijama i festivalima u Crnoj Gori i inostranstvu, koje su kroz iskustvo osigurale da svaki event ima prepoznatljiv potpis vrhunskog umjetničkog i organizacionih segmenta u produkciji, inovativne scenografije i izuzetnih muzičkih nastupa." data-en="Behind the team that today forms <span class='highlight'>Unique Production</span> are years of successful collaborations with the largest resorts, companies, and festivals in Montenegro and abroad, ensuring through experience that every event carries a distinctive signature of top-tier artistic and organizational production, innovative scenography, and exceptional musical performances.">Iza tima koji danas čini <span class="highlight">Unique Production</span> su godine uspješnih saradnji sa najvećim resortima, kompanijama i festivalima u Crnoj Gori i inostranstvu, koje su kroz iskustvo osigurale da svaki event ima prepoznatljiv potpis vrhunskog umjetničkog i organizacionih segmenta u produkciji, inovativne scenografije i izuzetnih muzičkih nastupa.</p>
-                <p data-sr="Sa bogatim iskustvom u event, muzičkoj i scenskoj umjetnosti, pružamo autentična i inovativna rješenja, prilagođena viziji i potrebama svakog klijenta." data-en="With extensive experience in event, music, and stage arts, we provide authentic and innovative solutions tailored to the vision and needs of each client.">Sa bogatim iskustvom u event, muzičkoj i scenskoj umjetnosti, pružamo autentična i inovativna rješenja, prilagođena viziji i potrebama svakog klijenta.</p>
-            </div>
-            <div class="services-card">
-                <h3 data-sr="Naše usluge" data-en="Our Services">Naše usluge</h3>
-                <ul class="services-list">
-                    <li data-sr="Muzički performansi" data-en="Musical Performances"><i class="fas fa-music"></i>Muzički performansi</li>
-                    <li data-sr="Art performansi" data-en="Art Performances"><i class="fas fa-paint-brush"></i>Art performansi</li>
-                    <li data-sr="Tehnička produkcija" data-en="Technical Production"><i class="fas fa-cogs"></i>Tehnička produkcija</li>
-                    <li data-sr="Dodatne usluge" data-en="Additional Services"><i class="fas fa-plus-circle"></i>Dodatne usluge</li>
-                </ul>
-            </div>
-            <div class="cta-section">
-                <a href="Kontakti.html" class="cta-button" data-sr="Kontaktirajte nas" data-en="Contact Us">Kontaktirajte nas</a>
-            </div>
-        </div>
-
-<button class="back-to-top" aria-label="Back to Top">
-    <i class="fas fa-arrow-up"></i>
-</button>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3 data-sr="Navigacija" data-en="Navigation">Navigacija</h3>
-                <ul>
-                    <li><a href="index.html" data-sr="Početna" data-en="Home">Početna</a></li>
-                    <li><a href="O-nama.html" data-sr="O nama" data-en="About Us">O nama</a></li>
-                    <li><a href="Galerija.html" data-sr="Galerija" data-en="Gallery">Galerija</a></li>
-                    <li><a href="Kontakti.html" data-sr="Kontakti" data-en="Contacts">Kontakti</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 data-sr="Kontakt" data-en="Contact">Kontakt</h3>
-                <ul>
-                    <li><a href="tel:+38268256063" data-sr="+382 68 256 063" data-en="+382 68 256 063">+382 68 256 063</a></li>
-                     <li><a href="mailto:info@uniqueproduction.me" data-sr="info@uniqueproduction.me" data-en="info@uniqueproduction.me">info@uniqueproduction.me</a></li>
-                    <li><span data-sr="Podgorica, Crna Gora" data-en="Podgorica, Montenegro">Podgorica, Crna Gora</span></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 data-sr="Pratite nas" data-en="Follow Us">Pratite nas</h3>
-                <div class="social-links">
-                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="team-card">
+                        <img src="placeholder.jpg" alt="Marija Kaluđerović">
+                        <h4 data-sr="Marija Kaluđerović" data-en="Marija Kaluđerović">Marija Kaluđerović</h4>
+                        <p data-sr="Direktorica" data-en="Director">Direktorica</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-credit" data-sr="© 2025 <a href='https://cryptogorac.com' target='_blank'>cryptogorac.com</a> | Sva prava zadržana." data-en="© 2025 <a href='https://cryptogorac.com' target='_blank'>cryptogorac.com</a> | All rights reserved.">
-            © 2025 <a href="https://cryptogorac.com" target="_blank">cryptogorac.com</a> | Sva prava zadržana.
+        </section>
+    </main>
+
+    <!-- Futer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Navigacija -->
+                <div class="col-md-4 mb-4">
+                    <h5 data-sr="Navigacija" data-en="Navigation">Navigacija</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" data-sr="Početna" data-en="Home">Početna</a></li>
+                        <li><a href="o-nama.html" data-sr="O nama" data-en="About Us">O nama</a></li>
+                        <li><a href="proizvodi.html" data-sr="Proizvodi" data-en="Products">Proizvodi</a></li>
+                        <li><a href="galerija.html" data-sr="Galerija" data-en="Gallery">Galerija</a></li>
+                        <li><a href="kontakti.html" data-sr="Kontakti" data-en="Contacts">Kontakti</a></li>
+                    </ul>
+                </div>
+                <!-- Kontakt -->
+                <div class="col-md-4 mb-4">
+                    <h5 data-sr="Kontakt" data-en="Contact">Kontakt</h5>
+                    <div class="contact-info">
+                        <p data-sr="+382 69 181 829" data-en="+382 69 181 829">+382 69 181 829</p>
+                        <p><a href="mailto:info@goodfood-mne.com" data-sr="info@goodfood-mne.com" data-en="info@goodfood-mne.com">info@goodfood-mne.com</a></p>
+                        <div data-sr="Podgorica, Crna Gora" data-en="Podgorica, Montenegro">Podgorica, Crna Gora</div>
+                    </div>
+                </div>
+                <!-- Pratite nas -->
+                <div class="col-md-4 mb-4 follow-us">
+                    <h5 data-sr="Pratite nas" data-en="Follow Us">Pratite nas</h5>
+                    <div class="social-icons">
+                        <a href="https://viber.com" target="_blank" aria-label="Viber"><i class="bi bi-telephone-fill"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="copyright" data-sr="© 2025 <a href='https://cryptogorac.com' target='_blank'>cryptogorac.com</a> | Sva prava zadržana." data-en="© 2025 <a href='https://cryptogorac.com' target='_blank'>cryptogorac.com</a> | All rights reserved.">© 2025 <a href="https://cryptogorac.com" target="_blank">cryptogorac.com</a> | Sva prava zadržana.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Bootstrap JS i Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <!-- JavaScript za skrivanje navigacionog bara prilikom skrolovanja i promjenu jezika -->
     <script>
+        // Navbar scroll behavior
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+        const navbarBrand = document.querySelector('.navbar-brand');
+
+        navbarBrand.addEventListener('click', function(event) {
+            console.log('Logo clicked! Redirecting to /index.html');
+        });
+
+        window.addEventListener('scroll', function() {
+            let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScrollTop > lastScrollTop) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        });
+
+        // Language switcher
         document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
             const languageFlags = document.querySelectorAll('.language-flag');
             const elements = document.querySelectorAll('[data-sr][data-en]');
 
-            // Hamburger menu toggle
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-
-            // Language switcher
             function updateLanguage(lang) {
                 elements.forEach(element => {
                     let text = lang === 'en' ? element.getAttribute('data-en') : element.getAttribute('data-sr');
@@ -1007,11 +538,9 @@
                 localStorage.setItem('selectedLanguage', lang);
             }
 
-            // Load saved language or default to 'sr'
             const savedLanguage = localStorage.getItem('selectedLanguage') || 'sr';
             updateLanguage(savedLanguage);
 
-            // Language flag click handlers
             languageFlags.forEach(flag => {
                 flag.addEventListener('click', () => {
                     const lang = flag.getAttribute('data-lang');
@@ -1019,27 +548,6 @@
                 });
             });
         });
-// Back to Top Button Functionality
-const backToTopButton = document.querySelector('.back-to-top');
-
-if (backToTopButton) {
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    });
-
-    // Smooth scroll to top on click
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
     </script>
 </body>
 </html>
